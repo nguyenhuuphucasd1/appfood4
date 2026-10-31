@@ -1,0 +1,2341 @@
+{
+  "dishes": [
+    {
+      "slug": "banh-beo",
+      "name": "Bánh bèo",
+      "aliases": [
+        "Bánh bèo"
+      ],
+      "region": "Miền Trung",
+      "category": "Bánh mặn",
+      "prepMinutes": 40,
+      "cookMinutes": 25,
+      "totalMinutes": 65,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-beo-chen/",
+      "description": "Phiên bản bánh bèo chén miền Trung, bánh mềm mỏng, phủ tôm cháy, mỡ hành và dùng cùng nước mắm pha.",
+      "commonsFileTitle": "File:Bánh bèo chén.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-beo-chen/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-beo-chen/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-beo-chen/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột gạo"
+        },
+        {
+          "name": "Bột năng"
+        },
+        {
+          "name": "Nước"
+        },
+        {
+          "name": "Tôm"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Dầu ăn"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Ớt"
+        }
+      ],
+      "steps": [
+        "Hòa bột gạo và bột năng với nước, để bột nghỉ rồi khuấy lại cho đồng nhất.",
+        "Quét một lớp dầu mỏng vào chén nhỏ và làm nóng chén trong xửng hấp.",
+        "Rót lớp bột vừa phải vào từng chén, hấp đến khi bánh trong và se mặt.",
+        "Làm tôm cháy từ tôm chín giã nhỏ; phi mỡ hành riêng.",
+        "Phủ tôm cháy và mỡ hành lên bánh, dùng nóng với nước mắm chua ngọt."
+      ]
+    },
+    {
+      "slug": "banh-bot-loc",
+      "name": "Bánh bột lọc",
+      "aliases": [
+        "Bánh bột lọc"
+      ],
+      "region": "Huế",
+      "category": "Bánh mặn",
+      "prepMinutes": 60,
+      "cookMinutes": 30,
+      "totalMinutes": 90,
+      "difficulty": null,
+      "servings": 6,
+      "servingsText": "6 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-bot-loc/",
+      "description": "Bánh bột lọc Huế có vỏ bột năng trong, nhân tôm thịt đậm vị và được gói lá chuối trước khi hấp.",
+      "commonsFileTitle": "File:Bánh bột lọc.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-bot-loc/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-bot-loc/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-bot-loc/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột năng"
+        },
+        {
+          "name": "Nước sôi"
+        },
+        {
+          "name": "Tôm nhỏ"
+        },
+        {
+          "name": "Thịt ba chỉ"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Tiêu"
+        },
+        {
+          "name": "Lá chuối"
+        }
+      ],
+      "steps": [
+        "Xào săn thịt ba chỉ và tôm với hành tím, nước mắm, đường và tiêu; để nguội.",
+        "Châm nước sôi vào bột năng từng ít một, trộn rồi nhồi đến khi khối bột dẻo mịn.",
+        "Chia bột, cán mỏng, đặt nhân tôm thịt vào giữa và miết kín mép.",
+        "Đặt bánh vào lá chuối đã làm mềm, gói kín rồi xếp vào xửng.",
+        "Hấp đến khi vỏ bánh trong, dùng với mỡ hành và nước mắm pha."
+      ]
+    },
+    {
+      "slug": "banh-canh",
+      "name": "Bánh canh",
+      "aliases": [
+        "Bánh canh"
+      ],
+      "region": "Miền Trung",
+      "category": "Món nước",
+      "prepMinutes": 40,
+      "cookMinutes": 40,
+      "totalMinutes": 80,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-canh-cha-ca/",
+      "description": "Bánh canh chả cá theo phong cách miền Trung, dùng sợi dày trong nước dùng cá thanh và chả cá dai.",
+      "commonsFileTitle": "File:Banh-Canh-Noodle-Soup.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-canh-cha-ca/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-canh-cha-ca/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-canh-cha-ca/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Sợi bánh canh"
+        },
+        {
+          "name": "Cá làm nước dùng"
+        },
+        {
+          "name": "Chả cá"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Rau mùi"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Tiêu"
+        }
+      ],
+      "steps": [
+        "Làm sạch cá, nấu cùng hành tím để lấy nước dùng rồi lọc bỏ xương.",
+        "Nêm nước dùng bằng nước mắm và gia vị vừa ăn, giữ sôi nhẹ.",
+        "Chiên hoặc hấp chả cá rồi cắt miếng vừa ăn.",
+        "Trụng sợi bánh canh đến độ mềm mong muốn và chia vào tô.",
+        "Chan nước dùng, thêm chả cá, hành lá, rau mùi và tiêu."
+      ]
+    },
+    {
+      "slug": "banh-cu-do",
+      "name": "Bánh cu đơ",
+      "aliases": [
+        "Bánh cu dơ"
+      ],
+      "region": "Hà Tĩnh",
+      "category": "Bánh ngọt",
+      "prepMinutes": 20,
+      "cookMinutes": 30,
+      "totalMinutes": 80,
+      "difficulty": null,
+      "servings": null,
+      "servingsText": "8–10 miếng",
+      "metadataSourceUrl": "https://eggyolk.vn/cach-lam-keo-cu-do-bang-duong-deo-thom-chuan-vi-ha-tinh/",
+      "description": "Kẹo lạc Hà Tĩnh kẹp bánh tráng, có vị mật mía, gừng và lạc rang giòn.",
+      "commonsFileTitle": "File:KeoCudo.JPG",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://trangiafoods.vn/blogs/news/cach-lam-banh-cu-do-ha-tinh/",
+      "sourceRevisionUrl": "https://trangiafoods.vn/blogs/news/cach-lam-banh-cu-do-ha-tinh/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Cách làm bánh cu đơ Hà Tĩnh",
+          "url": "https://trangiafoods.vn/blogs/news/cach-lam-banh-cu-do-ha-tinh/",
+          "publisher": "Trần Gia Foods",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://eggyolk.vn/cach-lam-keo-cu-do-bang-duong-deo-thom-chuan-vi-ha-tinh/",
+          "publisher": "eggyolk.vn",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Cu đơ – thức quà tâm tình của người Hà Tĩnh",
+          "url": "https://vntravellive.com/cu-do--thuc-qua-tam-tinh-cua-nguoi-ha-tinh-d35616.html",
+          "publisher": "Vietnam Travel Live",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Lạc nhân"
+        },
+        {
+          "name": "Mật mía"
+        },
+        {
+          "name": "Mạch nha"
+        },
+        {
+          "name": "Gừng tươi"
+        },
+        {
+          "name": "Bánh tráng mè"
+        }
+      ],
+      "steps": [
+        "Rang lạc chín thơm, xát bớt vỏ lụa và giữ hạt nguyên.",
+        "Đun mật mía với mạch nha trên lửa vừa, khuấy đều để hỗn hợp không bén nồi.",
+        "Thêm gừng thái sợi khi mật đạt độ sánh và tiếp tục đảo ngắn.",
+        "Cho lạc rang vào, trộn nhanh để mật áo đều từng hạt.",
+        "Múc hỗn hợp lên bánh tráng, ép một miếng bánh khác lên trên và để nguội hẳn."
+      ]
+    },
+    {
+      "slug": "banh-cuon",
+      "name": "Bánh cuốn",
+      "aliases": [
+        "Bánh cuốn"
+      ],
+      "region": "Miền Bắc",
+      "category": "Bánh mặn",
+      "prepMinutes": 40,
+      "cookMinutes": 45,
+      "totalMinutes": 85,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-cuon/",
+      "description": "Bánh cuốn nhân thịt là lớp bột gạo hấp mỏng cuộn thịt băm và mộc nhĩ, ăn cùng hành phi và nước chấm.",
+      "commonsFileTitle": "File:Bánh cuốn chả lụa.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-cuon/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-cuon/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-cuon/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột gạo"
+        },
+        {
+          "name": "Bột năng"
+        },
+        {
+          "name": "Nước"
+        },
+        {
+          "name": "Thịt heo băm"
+        },
+        {
+          "name": "Mộc nhĩ"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Hành phi"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Rau thơm"
+        }
+      ],
+      "steps": [
+        "Ngâm nở mộc nhĩ rồi băm nhỏ; xào cùng thịt và hành tím đến chín, nêm vừa ăn.",
+        "Pha bột gạo, bột năng và nước thành hỗn hợp loãng, để bột nghỉ.",
+        "Tráng một lớp bột thật mỏng trên mặt nồi hấp, đậy nắp đến khi bánh trong.",
+        "Lấy bánh ra mặt phẳng sạch, đặt nhân và cuộn nhẹ tay.",
+        "Rắc hành phi, dùng với rau thơm, chả lụa tùy chọn và nước mắm pha."
+      ]
+    },
+    {
+      "slug": "banh-can",
+      "name": "Bánh căn",
+      "aliases": [
+        "Bánh căn"
+      ],
+      "region": "Nam Trung Bộ",
+      "category": "Bánh mặn",
+      "prepMinutes": 30,
+      "cookMinutes": 30,
+      "totalMinutes": 60,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-can/",
+      "description": "Bánh căn miền Trung được đổ trong khuôn đất, mặt bánh mềm xốp, thường có trứng hoặc hải sản và ăn với nước chấm.",
+      "commonsFileTitle": "File:Bánh căn in phan rang, vietnam.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-can/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-can/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-can/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột gạo"
+        },
+        {
+          "name": "Nước"
+        },
+        {
+          "name": "Trứng cút"
+        },
+        {
+          "name": "Tôm"
+        },
+        {
+          "name": "Mực"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Dầu ăn"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Rau sống"
+        }
+      ],
+      "steps": [
+        "Pha bột gạo với nước thành hỗn hợp sánh vừa và để bột nghỉ.",
+        "Làm nóng khuôn bánh căn, quét rất ít dầu vào từng lỗ khuôn.",
+        "Rót bột, thêm trứng cút hoặc hải sản đã sơ chế lên mặt.",
+        "Đậy nắp đến khi viền bánh se lại và mặt bánh chín.",
+        "Gỡ bánh khỏi khuôn, thêm mỡ hành và dùng ngay với nước chấm cùng rau sống."
+      ]
+    },
+    {
+      "slug": "banh-gio",
+      "name": "Bánh giò",
+      "aliases": [
+        "Bánh giò"
+      ],
+      "region": "Miền Bắc",
+      "category": "Bánh mặn",
+      "prepMinutes": 60,
+      "cookMinutes": 40,
+      "totalMinutes": 160,
+      "difficulty": null,
+      "servings": null,
+      "servingsText": "14 bánh (6–8 phần)",
+      "metadataSourceUrl": "https://helenrecipes.com/recipe-52-banh-gio-vietnamese-rice-pyramid-dumplings/",
+      "description": "Bánh giò miền Bắc có lớp bột gạo mềm, nhân thịt băm mộc nhĩ và dáng chóp gói lá chuối.",
+      "commonsFileTitle": "File:Bánh giò.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://www.vietworldkitchen.com/blog/2018/05/vietnamese-rice-and-pork-pyramid-dumplings-recipe-banh-gio.html",
+      "sourceRevisionUrl": "https://www.vietworldkitchen.com/blog/2018/05/vietnamese-rice-and-pork-pyramid-dumplings-recipe-banh-gio.html",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Rice and Pork Pyramid Dumplings",
+          "url": "https://www.vietworldkitchen.com/blog/2018/05/vietnamese-rice-and-pork-pyramid-dumplings-recipe-banh-gio.html",
+          "publisher": "Viet World Kitchen",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://helenrecipes.com/recipe-52-banh-gio-vietnamese-rice-pyramid-dumplings/",
+          "publisher": "helenrecipes.com",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột gạo"
+        },
+        {
+          "name": "Bột bắp"
+        },
+        {
+          "name": "Nước dùng gà"
+        },
+        {
+          "name": "Thịt heo băm"
+        },
+        {
+          "name": "Mộc nhĩ"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Lá chuối"
+        }
+      ],
+      "steps": [
+        "Xào hành tím, thịt băm và mộc nhĩ; nêm nước mắm, tiêu rồi để nhân nguội.",
+        "Hòa bột gạo và bột bắp với nước dùng, lọc để hỗn hợp mịn.",
+        "Khuấy bột trên lửa vừa đến khi đặc dẻo nhưng chưa chín hoàn toàn.",
+        "Gấp lá chuối thành khuôn chóp, cho bột, nhân rồi phủ thêm bột và gói kín.",
+        "Hấp bánh đến khi bột chín mềm, để nghỉ vài phút trước khi mở lá."
+      ]
+    },
+    {
+      "slug": "banh-khot",
+      "name": "Bánh khọt",
+      "aliases": [
+        "Bánh khọt"
+      ],
+      "region": "Miền Nam",
+      "category": "Bánh mặn",
+      "prepMinutes": 25,
+      "cookMinutes": 5,
+      "totalMinutes": 50,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://www.kitchentomytable.com/view_recipe_data.php?id=10080",
+      "description": "Bánh khọt miền Nam là bánh nhỏ giòn viền, mềm bên trong, có tôm và mỡ hành, cuốn rau khi ăn.",
+      "commonsFileTitle": "File:Bánh khọt by Baoothersks.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://www.foodnetwork.com/recipes/food-network-kitchen/banh-khot-22957334",
+      "sourceRevisionUrl": "https://www.foodnetwork.com/recipes/food-network-kitchen/banh-khot-22957334",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Bánh Khọt",
+          "url": "https://www.foodnetwork.com/recipes/food-network-kitchen/banh-khot-22957334",
+          "publisher": "Food Network Kitchen",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://www.kitchentomytable.com/view_recipe_data.php?id=10080",
+          "publisher": "www.kitchentomytable.com",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột gạo"
+        },
+        {
+          "name": "Nước cốt dừa"
+        },
+        {
+          "name": "Nghệ"
+        },
+        {
+          "name": "Tôm"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Dầu ăn"
+        },
+        {
+          "name": "Rau sống"
+        },
+        {
+          "name": "Nước mắm"
+        }
+      ],
+      "steps": [
+        "Pha bột gạo với nước cốt dừa loãng và một ít nghệ, để bột nghỉ.",
+        "Làm sạch tôm, áp chảo sơ để tôm vừa săn.",
+        "Làm nóng khuôn bánh khọt và cho ít dầu vào từng ô.",
+        "Rót bột, đặt tôm lên mặt, đậy nắp đến khi bánh chín và viền giòn.",
+        "Thêm mỡ hành, dùng bánh với rau sống và nước mắm chua ngọt."
+      ]
+    },
+    {
+      "slug": "banh-mi-cay",
+      "name": "Bánh mì cay",
+      "aliases": [
+        "Bánh mì cay"
+      ],
+      "region": "Hải Phòng",
+      "category": "Món ăn đường phố",
+      "prepMinutes": 30,
+      "cookMinutes": 30,
+      "totalMinutes": 60,
+      "difficulty": null,
+      "servings": 6,
+      "servingsText": "6 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-mi-cay/",
+      "description": "Bánh mì cay Hải Phòng dùng bánh que giòn, pa-tê béo và tương ớt cay đặc trưng.",
+      "commonsFileTitle": "File:アオサンズのバインミークエ.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-mi-cay/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-mi-cay/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-mi-cay/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bánh mì que"
+        },
+        {
+          "name": "Pa-tê gan"
+        },
+        {
+          "name": "Mỡ hoặc bơ"
+        },
+        {
+          "name": "Tương ớt"
+        },
+        {
+          "name": "Rau mùi tùy chọn"
+        }
+      ],
+      "steps": [
+        "Rạch dọc bánh mì que nhưng không cắt rời hai nửa.",
+        "Phết một lớp mỏng mỡ hoặc bơ vào mặt trong bánh.",
+        "Dàn pa-tê đều dọc theo ổ bánh, tránh cho quá dày.",
+        "Nướng bánh đến khi vỏ nóng giòn và nhân pa-tê dậy mùi.",
+        "Rưới tương ớt theo khẩu vị và dùng ngay."
+      ]
+    },
+    {
+      "slug": "banh-pia",
+      "name": "Bánh pía",
+      "aliases": [
+        "Bánh pía"
+      ],
+      "region": "Sóc Trăng",
+      "category": "Bánh ngọt",
+      "prepMinutes": 120,
+      "cookMinutes": 45,
+      "totalMinutes": 165,
+      "difficulty": null,
+      "servings": null,
+      "servingsText": "12 bánh",
+      "metadataSourceUrl": "https://chefmundo.com/cong-thuc/banh-ngot/banh-pia/",
+      "description": "Bánh pía Sóc Trăng có vỏ nhiều lớp, nhân đậu xanh sầu riêng và trứng muối.",
+      "commonsFileTitle": "File:Bánh pía.JPG",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://chefmundo.com/cong-thuc/banh-ngot/banh-pia/",
+      "sourceRevisionUrl": "https://chefmundo.com/cong-thuc/banh-ngot/banh-pia/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Công thức bánh pía",
+          "url": "https://chefmundo.com/cong-thuc/banh-ngot/banh-pia/",
+          "publisher": "ChefMundo",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột mì"
+        },
+        {
+          "name": "Dầu ăn"
+        },
+        {
+          "name": "Đậu xanh cà vỏ"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Sầu riêng"
+        },
+        {
+          "name": "Mạch nha"
+        },
+        {
+          "name": "Trứng muối"
+        },
+        {
+          "name": "Trứng gà"
+        }
+      ],
+      "steps": [
+        "Hấp chín đậu xanh, xay mịn rồi sên với đường, dầu, sầu riêng và mạch nha đến dẻo.",
+        "Làm chín lòng đỏ trứng muối, chia nhân đậu và bọc mỗi lòng đỏ vào giữa.",
+        "Nhào riêng bột nước và bột dầu, bọc hai phần bột rồi cán cuộn để tạo lớp.",
+        "Cán vỏ, bọc kín nhân, đặt mép gấp xuống khay và xăm lỗ thoát hơi.",
+        "Nướng bánh, lấy ra quét trứng thật mỏng rồi nướng tiếp đến khi mặt vàng."
+      ]
+    },
+    {
+      "slug": "banh-trang-nuong",
+      "name": "Bánh tráng nướng",
+      "aliases": [
+        "Bánh tráng nướng"
+      ],
+      "region": "Đà Lạt",
+      "category": "Món ăn đường phố",
+      "prepMinutes": 15,
+      "cookMinutes": 20,
+      "totalMinutes": 35,
+      "difficulty": null,
+      "servings": 6,
+      "servingsText": "6 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-trang-nuong/",
+      "description": "Bánh tráng nướng kiểu Đà Lạt có nền bánh giòn, trứng, hành lá và các phần phủ mặn tùy chọn.",
+      "commonsFileTitle": "File:Pizzabanhtrangnuong.JPG",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-trang-nuong/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-trang-nuong/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-trang-nuong/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bánh tráng"
+        },
+        {
+          "name": "Trứng cút hoặc trứng gà"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Tép khô"
+        },
+        {
+          "name": "Thịt băm"
+        },
+        {
+          "name": "Tương ớt"
+        },
+        {
+          "name": "Mayonnaise tùy chọn"
+        }
+      ],
+      "steps": [
+        "Xào chín thịt băm và chuẩn bị sẵn hành lá, tép khô cùng các phần phủ.",
+        "Đặt bánh tráng lên bếp than hoặc chảo khô ở lửa nhỏ.",
+        "Đập trứng lên mặt bánh, dùng thìa dàn mỏng cùng hành lá.",
+        "Rải thịt và tép khô, xoay bánh liên tục để đáy giòn đều mà không cháy.",
+        "Thêm tương ớt hoặc xốt tùy chọn, gập đôi hoặc để nguyên và dùng nóng."
+      ]
+    },
+    {
+      "slug": "banh-tet",
+      "name": "Bánh tét",
+      "aliases": [
+        "Bánh tét"
+      ],
+      "region": "Miền Nam",
+      "category": "Bánh truyền thống",
+      "prepMinutes": 180,
+      "cookMinutes": 600,
+      "totalMinutes": 780,
+      "difficulty": null,
+      "servings": null,
+      "servingsText": "4–5 đòn (10–15 phần)",
+      "metadataSourceUrl": "https://helenrecipes.com/vi/recipe-banh-tet-vietnamese-cylindrical-sticky-rice-cake-2/",
+      "description": "Bánh tét miền Nam là đòn nếp gói lá chuối với nhân đậu xanh thịt heo, nấu chín nhiều giờ.",
+      "commonsFileTitle": "File:Banh Tet.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://helenrecipes.com/vi/recipe-banh-tet-vietnamese-cylindrical-sticky-rice-cake-2/",
+      "sourceRevisionUrl": "https://helenrecipes.com/vi/recipe-banh-tet-vietnamese-cylindrical-sticky-rice-cake-2/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Bánh Tét",
+          "url": "https://helenrecipes.com/vi/recipe-banh-tet-vietnamese-cylindrical-sticky-rice-cake-2/",
+          "publisher": "Helen's Recipes",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo nếp"
+        },
+        {
+          "name": "Đậu xanh cà vỏ"
+        },
+        {
+          "name": "Thịt ba chỉ"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Tiêu"
+        },
+        {
+          "name": "Lá chuối"
+        },
+        {
+          "name": "Dây lạt"
+        }
+      ],
+      "steps": [
+        "Ngâm riêng nếp và đậu xanh; nấu đậu mềm rồi nghiền, nêm nhẹ.",
+        "Cắt thịt ba chỉ thành dải và ướp với hành, nước mắm cùng tiêu.",
+        "Dàn đậu quanh dải thịt thành phần nhân hình trụ.",
+        "Xếp lá chuối, dàn nếp, đặt nhân giữa rồi cuộn thành đòn và buộc chắc.",
+        "Luộc bánh luôn ngập nước đến khi nếp chín dẻo, vớt ra rửa sạch và để ráo."
+      ]
+    },
+    {
+      "slug": "banh-xeo",
+      "name": "Bánh xèo",
+      "aliases": [
+        "Bánh xèo"
+      ],
+      "region": "Miền Nam",
+      "category": "Bánh mặn",
+      "prepMinutes": 30,
+      "cookMinutes": 40,
+      "totalMinutes": 70,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-xeo/",
+      "description": "Bánh xèo miền Nam có vỏ bột gạo nghệ giòn, nhân tôm thịt giá đỗ, ăn cuốn rau và chấm nước mắm.",
+      "commonsFileTitle": "File:Bánh xèo 1.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-xeo/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-xeo/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-xeo/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột gạo"
+        },
+        {
+          "name": "Nước cốt dừa"
+        },
+        {
+          "name": "Bột nghệ"
+        },
+        {
+          "name": "Tôm"
+        },
+        {
+          "name": "Thịt ba chỉ"
+        },
+        {
+          "name": "Giá đỗ"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Rau sống"
+        },
+        {
+          "name": "Nước mắm"
+        }
+      ],
+      "steps": [
+        "Pha bột gạo với nước cốt dừa loãng, nghệ và hành lá rồi để bột nghỉ.",
+        "Xào sơ thịt ba chỉ và tôm trong chảo nóng.",
+        "Cho ít dầu vào chảo, rót bột và nghiêng chảo để tạo lớp vỏ mỏng.",
+        "Thêm tôm thịt và giá đỗ, đậy nắp ngắn rồi mở nắp cho vỏ giòn.",
+        "Gập bánh, dùng ngay với rau sống và nước mắm chua ngọt."
+      ]
+    },
+    {
+      "slug": "banh-da-cua",
+      "name": "Bánh đa cua",
+      "aliases": [
+        "Bánh da cua"
+      ],
+      "region": "Hải Phòng",
+      "category": "Món nước",
+      "prepMinutes": 45,
+      "cookMinutes": 90,
+      "totalMinutes": 135,
+      "difficulty": null,
+      "servings": 6,
+      "servingsText": "6 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-da-cua/",
+      "description": "Bánh đa cua Hải Phòng dùng sợi bánh đa đỏ, nước cua đồng, rau và các phần ăn kèm đặc trưng.",
+      "commonsFileTitle": "File:Bánh đa cua Hải Phòng (27.2 (2).jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-da-cua/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-da-cua/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-da-cua/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bánh đa đỏ"
+        },
+        {
+          "name": "Cua đồng xay"
+        },
+        {
+          "name": "Sườn heo"
+        },
+        {
+          "name": "Cà chua"
+        },
+        {
+          "name": "Rau muống"
+        },
+        {
+          "name": "Lá lốt"
+        },
+        {
+          "name": "Hành phi"
+        },
+        {
+          "name": "Nước mắm"
+        }
+      ],
+      "steps": [
+        "Lọc cua xay với nước nhiều lần, bỏ bã và giữ phần nước cua.",
+        "Đun nước cua ở lửa vừa để riêu nổi thành mảng, vớt riêu ra riêng.",
+        "Nấu nước dùng sườn, thêm cà chua xào và nước cua, nêm vừa ăn.",
+        "Trụng bánh đa đỏ và rau muống, chia vào tô cùng riêu cua.",
+        "Chan nước dùng, thêm lá lốt, hành phi và phần ăn kèm tùy chọn."
+      ]
+    },
+    {
+      "slug": "banh-duc",
+      "name": "Bánh đúc",
+      "aliases": [
+        "Bánh dúc"
+      ],
+      "region": "Miền Bắc",
+      "category": "Bánh mặn",
+      "prepMinutes": 30,
+      "cookMinutes": 45,
+      "totalMinutes": 75,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/banh-duc-tau/",
+      "description": "Bánh đúc mặn kiểu miền Bắc có nền bột gạo mềm, dùng cùng thịt băm mộc nhĩ và nước mắm pha.",
+      "commonsFileTitle": "File:Banhduc-northern.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/banh-duc-tau/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/banh-duc-tau/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/banh-duc-tau/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bột gạo"
+        },
+        {
+          "name": "Bột năng"
+        },
+        {
+          "name": "Nước vôi trong thực phẩm"
+        },
+        {
+          "name": "Thịt heo băm"
+        },
+        {
+          "name": "Mộc nhĩ"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Hành phi"
+        },
+        {
+          "name": "Nước mắm"
+        }
+      ],
+      "steps": [
+        "Hòa bột gạo và bột năng với nước, để lắng rồi thay phần nước trong nếu công thức nguồn yêu cầu.",
+        "Khuấy bột trên lửa nhỏ liên tục đến khi bột đặc, bóng và chín.",
+        "Đổ bột ra khuôn đã thoa dầu, dàn phẳng và để nguội cho định hình.",
+        "Xào thịt băm với mộc nhĩ và hành tím, nêm vừa ăn.",
+        "Cắt bánh thành miếng, phủ nhân, hành phi và chan nước mắm pha."
+      ]
+    },
+    {
+      "slug": "banh-dau-xanh",
+      "name": "Bánh đậu xanh",
+      "aliases": [
+        "Bánh dậu xanh"
+      ],
+      "region": "Hải Dương",
+      "category": "Bánh ngọt",
+      "prepMinutes": 30,
+      "cookMinutes": 120,
+      "totalMinutes": 150,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://www.dienmayxanh.com/vao-bep/2-cach-lam-banh-dau-xanh-trai-cay-va-nuong-thom-ngon-don-01944",
+      "description": "Bánh đậu xanh Hải Dương là bánh ngọt khô tơi, làm từ đậu xanh đã cà vỏ, đường và chất béo.",
+      "commonsFileTitle": "File:Bánh đậu xanh.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://www.dienmayxanh.com/vao-bep/3-cach-lam-banh-dau-xanh-bang-noi-com-dien-dung-vi-chuan-01210",
+      "sourceRevisionUrl": "https://www.dienmayxanh.com/vao-bep/3-cach-lam-banh-dau-xanh-bang-noi-com-dien-dung-vi-chuan-01210",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Cách làm bánh đậu xanh",
+          "url": "https://www.dienmayxanh.com/vao-bep/3-cach-lam-banh-dau-xanh-bang-noi-com-dien-dung-vi-chuan-01210",
+          "publisher": "Điện máy XANH",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://www.dienmayxanh.com/vao-bep/2-cach-lam-banh-dau-xanh-trai-cay-va-nuong-thom-ngon-don-01944",
+          "publisher": "www.dienmayxanh.com",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Đậu xanh cà vỏ"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Dầu thực vật"
+        },
+        {
+          "name": "Nước cốt dừa tùy chọn"
+        },
+        {
+          "name": "Vani"
+        },
+        {
+          "name": "Muối"
+        }
+      ],
+      "steps": [
+        "Ngâm đậu xanh, hấp hoặc nấu đến khi mềm rồi nghiền thật mịn.",
+        "Cho đậu vào chảo cùng đường, dầu và một nhúm muối.",
+        "Sên lửa nhỏ, đảo liên tục đến khi hỗn hợp khô ráo và tơi mịn.",
+        "Thêm vani khi nhân gần đạt, trộn đều rồi để bớt nóng.",
+        "Ép đậu vào khuôn thành miếng nhỏ, lấy ra nhẹ tay và để nguội khô."
+      ]
+    },
+    {
+      "slug": "bun-ca",
+      "name": "Bún cá",
+      "aliases": [
+        "Bún cá"
+      ],
+      "region": "Hải Phòng",
+      "category": "Món nước",
+      "prepMinutes": 30,
+      "cookMinutes": 60,
+      "totalMinutes": 90,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/bun-ca-cay/",
+      "description": "Bún cá cay Hải Phòng dùng cá chiên, nước dùng cà chua thanh chua và rau ăn kèm.",
+      "commonsFileTitle": "File:Bún Cá Hà Nội.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/bun-ca-cay/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/bun-ca-cay/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/bun-ca-cay/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bún tươi"
+        },
+        {
+          "name": "Cá"
+        },
+        {
+          "name": "Xương cá hoặc xương heo"
+        },
+        {
+          "name": "Cà chua"
+        },
+        {
+          "name": "Dọc mùng"
+        },
+        {
+          "name": "Rau cần"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Ớt"
+        },
+        {
+          "name": "Nước mắm"
+        }
+      ],
+      "steps": [
+        "Lọc thịt cá, giữ xương để nấu nước dùng; cắt cá thành miếng và thấm khô.",
+        "Nấu xương cá hoặc xương heo với hành để lấy nước dùng, sau đó lọc trong.",
+        "Chiên cá đến vàng ngoài nhưng vẫn ẩm bên trong.",
+        "Xào cà chua rồi cho vào nước dùng, nêm nước mắm và vị chua cay vừa ăn.",
+        "Trụng bún và rau, xếp cá vào tô rồi chan nước dùng nóng."
+      ]
+    },
+    {
+      "slug": "bun-mam",
+      "name": "Bún mắm",
+      "aliases": [
+        "Bún mắm"
+      ],
+      "region": "Miền Tây",
+      "category": "Món nước",
+      "prepMinutes": 35,
+      "cookMinutes": 60,
+      "totalMinutes": 95,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/bun-mam/",
+      "description": "Bún mắm miền Tây có nước dùng từ mắm cá, sả và cà tím, ăn cùng hải sản, thịt heo và rau.",
+      "commonsFileTitle": "File:Bún mắm.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/bun-mam/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/bun-mam/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/bun-mam/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bún tươi"
+        },
+        {
+          "name": "Mắm cá linh hoặc cá sặc"
+        },
+        {
+          "name": "Sả"
+        },
+        {
+          "name": "Cà tím"
+        },
+        {
+          "name": "Tôm"
+        },
+        {
+          "name": "Mực"
+        },
+        {
+          "name": "Thịt heo quay"
+        },
+        {
+          "name": "Rau sống"
+        },
+        {
+          "name": "Ớt"
+        }
+      ],
+      "steps": [
+        "Nấu mắm cá với nước cho thịt cá tan, sau đó lọc kỹ lấy phần nước.",
+        "Nấu nước mắm đã lọc với sả đập dập và điều chỉnh độ mặn bằng nước dùng.",
+        "Cho cà tím vào nấu vừa mềm; luộc riêng tôm và mực để không bị dai.",
+        "Trụng bún, xếp hải sản và thịt heo quay vào tô.",
+        "Chan nước dùng thật nóng, dùng cùng rau sống và ớt."
+      ]
+    },
+    {
+      "slug": "bun-rieu",
+      "name": "Bún riêu",
+      "aliases": [
+        "Bún riêu"
+      ],
+      "region": "Miền Bắc",
+      "category": "Món nước",
+      "prepMinutes": 40,
+      "cookMinutes": 50,
+      "totalMinutes": 90,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/bun-rieu/",
+      "description": "Bún riêu cua dùng riêu cua đồng, cà chua và vị chua dịu trong nước dùng, ăn với rau sống.",
+      "commonsFileTitle": "File:Bowl of Vietnamese bun rieu soup with tomato.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/bun-rieu/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/bun-rieu/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/bun-rieu/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bún tươi"
+        },
+        {
+          "name": "Cua đồng xay"
+        },
+        {
+          "name": "Cà chua"
+        },
+        {
+          "name": "Đậu phụ"
+        },
+        {
+          "name": "Mắm tôm"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Rau sống"
+        },
+        {
+          "name": "Giấm bỗng hoặc me"
+        }
+      ],
+      "steps": [
+        "Lọc cua xay với nước, bỏ bã và nêm rất nhẹ phần nước cua.",
+        "Đun lửa vừa đến khi riêu nổi, vớt riêu ra để giữ thành mảng.",
+        "Chiên vàng đậu phụ; xào cà chua với hành tím rồi cho vào nồi nước cua.",
+        "Nêm mắm tôm và vị chua vừa ăn, thả lại riêu và đậu phụ.",
+        "Cho bún vào tô, chan nước dùng rồi thêm hành lá và rau sống."
+      ]
+    },
+    {
+      "slug": "bun-thit-nuong",
+      "name": "Bún thịt nướng",
+      "aliases": [
+        "Bún thịt nướng"
+      ],
+      "region": "Miền Nam",
+      "category": "Món khô",
+      "prepMinutes": 30,
+      "cookMinutes": 30,
+      "totalMinutes": 180,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://joyofcooking.com/recipes/bun-thit-nuong/",
+      "description": "Bún thịt nướng miền Nam gồm thịt heo ướp sả nướng, bún, rau, đồ chua, đậu phộng và nước mắm.",
+      "commonsFileTitle": "File:Bún Thịt Nướng Chả Giò.JPG",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://en.wikipedia.org/wiki/B%C3%BAn_th%E1%BB%8Bt_n%C6%B0%E1%BB%9Bng",
+      "sourceRevisionUrl": "https://en.wikipedia.org/wiki/B%C3%BAn_th%E1%BB%8Bt_n%C6%B0%E1%BB%9Bng",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Bún thịt nướng",
+          "url": "https://en.wikipedia.org/wiki/B%C3%BAn_th%E1%BB%8Bt_n%C6%B0%E1%BB%9Bng",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://joyofcooking.com/recipes/bun-thit-nuong/",
+          "publisher": "joyofcooking.com",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bún tươi"
+        },
+        {
+          "name": "Thịt vai heo"
+        },
+        {
+          "name": "Sả"
+        },
+        {
+          "name": "Tỏi"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Rau sống"
+        },
+        {
+          "name": "Đồ chua"
+        },
+        {
+          "name": "Đậu phộng"
+        }
+      ],
+      "steps": [
+        "Thái mỏng thịt heo, ướp với sả, tỏi, hành tím, nước mắm và đường.",
+        "Để thịt thấm rồi xiên hoặc trải lên vỉ, nướng đến khi xém cạnh và chín đều.",
+        "Pha nước mắm chua ngọt, chuẩn bị đồ chua và rang giã đậu phộng.",
+        "Cho rau sống và bún vào tô, xếp thịt nướng lên trên.",
+        "Thêm đồ chua, đậu phộng và mỡ hành; chan nước mắm khi dùng."
+      ]
+    },
+    {
+      "slug": "bun-dau-mam-tom",
+      "name": "Bún đậu mắm tôm",
+      "aliases": [
+        "Bún dậu mắm tôm"
+      ],
+      "region": "Miền Bắc",
+      "category": "Món khô",
+      "prepMinutes": 25,
+      "cookMinutes": 20,
+      "totalMinutes": 45,
+      "difficulty": null,
+      "servings": 2,
+      "servingsText": "2 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/bun-dau-mam-tom/",
+      "description": "Bún đậu mắm tôm là mẹt bún lá, đậu phụ chiên, rau thơm và các phần ăn kèm dùng với mắm tôm đánh bông.",
+      "commonsFileTitle": "File:Bún đậu mắm tôm.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/bun-dau-mam-tom/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/bun-dau-mam-tom/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/bun-dau-mam-tom/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Bún lá"
+        },
+        {
+          "name": "Đậu phụ"
+        },
+        {
+          "name": "Mắm tôm"
+        },
+        {
+          "name": "Quất hoặc chanh"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Dầu nóng"
+        },
+        {
+          "name": "Rau kinh giới"
+        },
+        {
+          "name": "Tía tô"
+        },
+        {
+          "name": "Dưa leo"
+        }
+      ],
+      "steps": [
+        "Cắt đậu phụ thành miếng vừa ăn, thấm khô rồi chiên vàng giòn các mặt.",
+        "Cắt bún lá thành miếng và rửa sạch các loại rau ăn kèm.",
+        "Pha mắm tôm với đường và nước quất hoặc chanh, khuấy đều.",
+        "Rót một ít dầu chiên đang nóng vào mắm tôm và đánh đến khi nổi bọt.",
+        "Xếp bún, đậu và rau lên mẹt; dùng ngay cùng chén mắm tôm."
+      ]
+    },
+    {
+      "slug": "chao-long",
+      "name": "Cháo lòng",
+      "aliases": [
+        "Cháo lòng"
+      ],
+      "region": null,
+      "category": "Món cháo",
+      "prepMinutes": 45,
+      "cookMinutes": 90,
+      "totalMinutes": 135,
+      "difficulty": null,
+      "servings": 6,
+      "servingsText": "6 phần",
+      "metadataSourceUrl": "https://world.food/recipes/vietnam/chao-long",
+      "description": "Cháo lòng nấu từ gạo rang và nước luộc lòng, ăn cùng lòng heo sơ chế kỹ, hành rau và tiêu.",
+      "commonsFileTitle": "File:Cháo lòng.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://www.cet.edu.vn/cach-nau-chao-long-heo",
+      "sourceRevisionUrl": "https://www.cet.edu.vn/cach-nau-chao-long-heo",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Cách nấu cháo lòng heo",
+          "url": "https://www.cet.edu.vn/cach-nau-chao-long-heo",
+          "publisher": "CET",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://world.food/recipes/vietnam/chao-long",
+          "publisher": "world.food",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo tẻ"
+        },
+        {
+          "name": "Gạo nếp"
+        },
+        {
+          "name": "Lòng heo"
+        },
+        {
+          "name": "Xương heo"
+        },
+        {
+          "name": "Gừng"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Rau răm"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Tiêu"
+        }
+      ],
+      "steps": [
+        "Sơ chế từng loại lòng với muối, chanh hoặc gừng, rửa kỹ và để ráo.",
+        "Nấu xương lấy nước dùng; luộc lòng vừa chín rồi ngâm nước nguội và thái miếng.",
+        "Rang gạo đến thơm, vo nhanh rồi cho vào nước dùng nấu lửa nhỏ.",
+        "Khuấy định kỳ đến khi hạt gạo nở mềm, nêm nước mắm vừa ăn.",
+        "Múc cháo ra tô, thêm lòng, hành lá, rau răm, gừng và tiêu."
+      ]
+    },
+    {
+      "slug": "ca-kho-to",
+      "name": "Cá kho tộ",
+      "aliases": [
+        "Cá kho tộ"
+      ],
+      "region": "Miền Nam",
+      "category": "Món kho",
+      "prepMinutes": 15,
+      "cookMinutes": 45,
+      "totalMinutes": 60,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/ca-kho-to/",
+      "description": "Cá kho tộ miền Nam kho cá trong nồi đất với nước màu, nước mắm và tiêu đến khi xốt sánh.",
+      "commonsFileTitle": "File:Cá kho tộ, cá hú.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/ca-kho-to/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/ca-kho-to/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/ca-kho-to/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Cá cắt khúc"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Nước dừa hoặc nước"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Tỏi"
+        },
+        {
+          "name": "Ớt"
+        },
+        {
+          "name": "Tiêu"
+        },
+        {
+          "name": "Dầu ăn"
+        }
+      ],
+      "steps": [
+        "Làm sạch cá, để ráo rồi ướp với nước mắm, hành, tỏi, tiêu và một phần đường.",
+        "Thắng phần đường còn lại với ít dầu đến màu cánh gián, châm nước cẩn thận.",
+        "Xếp cá vào nồi, thêm nước màu và nước dừa vừa gần ngập cá.",
+        "Kho lửa vừa đến sôi rồi hạ nhỏ, trở cá nhẹ tay một lần nếu cần.",
+        "Kho đến khi cá thấm và nước xốt sánh, thêm ớt cùng tiêu trước khi tắt bếp."
+      ]
+    },
+    {
+      "slug": "com-chay",
+      "name": "Cơm cháy",
+      "aliases": [
+        "Cơm cháy"
+      ],
+      "region": "Ninh Bình",
+      "category": "Món ăn đường phố",
+      "prepMinutes": 35,
+      "cookMinutes": 80,
+      "totalMinutes": 205,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://travelshelper.com/world-of-food/vietnamese-national-dishes/c%C6%A1m-ch%C3%A1y-ninh-b%C3%ACnh-crispy-rice-cakes-with-goat-sauce/",
+      "description": "Cơm cháy kiểu Ninh Bình là miếng cơm ép mỏng, phơi hoặc sấy rồi chiên giòn, dùng cùng xốt mặn.",
+      "commonsFileTitle": "File:Cơm cháy thịt dê Ninh Bình.JPG",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://www.thatlangon.com/cong-thuc/cach-lam-com-chay/",
+      "sourceRevisionUrl": "https://www.thatlangon.com/cong-thuc/cach-lam-com-chay/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Cách làm cơm cháy",
+          "url": "https://www.thatlangon.com/cong-thuc/cach-lam-com-chay/",
+          "publisher": "Thật Là Ngon",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://travelshelper.com/world-of-food/vietnamese-national-dishes/c%C6%A1m-ch%C3%A1y-ninh-b%C3%ACnh-crispy-rice-cakes-with-goat-sauce/",
+          "publisher": "travelshelper.com",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo tẻ"
+        },
+        {
+          "name": "Gạo nếp"
+        },
+        {
+          "name": "Dầu ăn"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Hành lá"
+        },
+        {
+          "name": "Ớt"
+        },
+        {
+          "name": "Chà bông tùy chọn"
+        }
+      ],
+      "steps": [
+        "Nấu hỗn hợp gạo tẻ và một phần gạo nếp với lượng nước vừa để cơm chín dẻo.",
+        "Ép cơm thành lớp mỏng đều trên khay, cắt miếng và sấy hoặc phơi đến khô.",
+        "Chiên từng miếng trong dầu nóng đến khi nở giòn, vớt ra để ráo.",
+        "Nấu nước mắm với đường thành xốt sệt nhẹ, thêm ớt và hành lá.",
+        "Rưới xốt vừa đủ lên cơm cháy, thêm chà bông nếu dùng và thưởng thức sớm."
+      ]
+    },
+    {
+      "slug": "com-tam",
+      "name": "Cơm tấm",
+      "aliases": [
+        "Cơm tấm"
+      ],
+      "region": "Sài Gòn",
+      "category": "Món cơm",
+      "prepMinutes": 25,
+      "cookMinutes": 35,
+      "totalMinutes": 60,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/com-tam/",
+      "description": "Cơm tấm Sài Gòn dùng hạt tấm nấu chín, sườn nướng, bì, chả trứng, đồ chua và nước mắm.",
+      "commonsFileTitle": "File:Cơm Tấm Bì Sườn Chả.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/com-tam/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/com-tam/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/com-tam/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo tấm"
+        },
+        {
+          "name": "Sườn cốt lết"
+        },
+        {
+          "name": "Sả"
+        },
+        {
+          "name": "Tỏi"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Bì heo"
+        },
+        {
+          "name": "Trứng"
+        },
+        {
+          "name": "Đồ chua"
+        },
+        {
+          "name": "Hành lá"
+        }
+      ],
+      "steps": [
+        "Vo gạo tấm nhẹ tay và nấu với lượng nước phù hợp để cơm chín tơi.",
+        "Ướp sườn với sả, tỏi, nước mắm và đường rồi để thấm.",
+        "Nướng sườn đến khi chín, trở đều để hai mặt xém thơm mà không khô.",
+        "Chuẩn bị bì, chả trứng, đồ chua và mỡ hành theo phần ăn kèm.",
+        "Xới cơm ra đĩa, xếp sườn cùng đồ ăn kèm và dùng với nước mắm chua ngọt."
+      ]
+    },
+    {
+      "slug": "hu-tieu",
+      "name": "Hủ tiếu",
+      "aliases": [
+        "Hủ tiếu"
+      ],
+      "region": "Miền Nam",
+      "category": "Món nước",
+      "prepMinutes": 40,
+      "cookMinutes": 180,
+      "totalMinutes": 220,
+      "difficulty": null,
+      "servings": 6,
+      "servingsText": "6 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/hu-tieu/",
+      "description": "Hủ tiếu Nam Vang có nước dùng xương trong, sợi hủ tiếu, thịt heo, tôm và rau giá.",
+      "commonsFileTitle": "File:Hủ tiếu Nam Vang.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/hu-tieu/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/hu-tieu/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/hu-tieu/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Sợi hủ tiếu"
+        },
+        {
+          "name": "Xương heo"
+        },
+        {
+          "name": "Thịt nạc heo"
+        },
+        {
+          "name": "Tôm"
+        },
+        {
+          "name": "Thịt băm"
+        },
+        {
+          "name": "Củ cải trắng"
+        },
+        {
+          "name": "Hành phi"
+        },
+        {
+          "name": "Giá"
+        },
+        {
+          "name": "Hẹ"
+        },
+        {
+          "name": "Nước mắm"
+        }
+      ],
+      "steps": [
+        "Chần xương heo, rửa sạch rồi hầm với củ cải để lấy nước dùng trong.",
+        "Luộc chín thịt heo và tôm trong nước dùng, vớt ra rồi thái thịt.",
+        "Xào săn thịt băm với hành; nêm nước dùng bằng nước mắm và gia vị vừa ăn.",
+        "Trụng nhanh sợi hủ tiếu và giá, để ráo rồi cho vào tô.",
+        "Xếp thịt, tôm, thịt băm, hẹ và hành phi, sau đó chan nước dùng nóng."
+      ]
+    },
+    {
+      "slug": "mi-quang",
+      "name": "Mì Quảng",
+      "aliases": [
+        "Mì Quảng"
+      ],
+      "region": "Quảng Nam",
+      "category": "Món mì",
+      "prepMinutes": 40,
+      "cookMinutes": 45,
+      "totalMinutes": 85,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/mi-quang/",
+      "description": "Mì Quảng gà có sợi mì vàng, phần nhân gà đậm vị, ít nước dùng, rau sống, lạc và bánh tráng.",
+      "commonsFileTitle": "File:Mì Quảng.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/mi-quang/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/mi-quang/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/mi-quang/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Sợi mì Quảng"
+        },
+        {
+          "name": "Thịt gà"
+        },
+        {
+          "name": "Nghệ"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Dầu điều"
+        },
+        {
+          "name": "Rau sống"
+        },
+        {
+          "name": "Đậu phộng"
+        },
+        {
+          "name": "Bánh tráng mè"
+        }
+      ],
+      "steps": [
+        "Chặt gà thành miếng, ướp với hành tím, nghệ, nước mắm và tiêu.",
+        "Xào săn gà với dầu điều rồi thêm lượng nước vừa đủ, nấu đến khi gà mềm.",
+        "Nêm phần nước nhân đậm đà vì món chỉ dùng một lượng nước vừa phải.",
+        "Trụng sợi mì và chia vào tô cùng rau sống.",
+        "Xếp gà, chan nước nhân, rắc đậu phộng và dùng với bánh tráng mè."
+      ]
+    },
+    {
+      "slug": "nem-chua",
+      "name": "Nem chua",
+      "aliases": [
+        "Nem chua"
+      ],
+      "region": null,
+      "category": "Món lên men",
+      "prepMinutes": 90,
+      "cookMinutes": 0,
+      "totalMinutes": 4320,
+      "difficulty": null,
+      "servings": null,
+      "servingsText": "20 cuốn",
+      "metadataSourceUrl": "https://world.food/recipes/vietnam/nem-chua",
+      "description": "Nem chua là thịt heo lên men cùng bì, tỏi và ớt; công thức này yêu cầu kiểm soát vệ sinh và nhiệt độ nghiêm ngặt.",
+      "commonsFileTitle": "File:Nem chua.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Nem_chua",
+      "sourceRevisionUrl": "https://en.wikipedia.org/wiki/Nem_chua",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Nem chua",
+          "url": "https://en.wikipedia.org/wiki/Nem_chua",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "Nguồn thời gian và khẩu phần",
+          "url": "https://world.food/recipes/vietnam/nem-chua",
+          "publisher": "world.food",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt heo nạc thật tươi"
+        },
+        {
+          "name": "Bì heo"
+        },
+        {
+          "name": "Tỏi"
+        },
+        {
+          "name": "Ớt"
+        },
+        {
+          "name": "Tiêu"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Muối"
+        },
+        {
+          "name": "Chất tạo men chuyên dụng"
+        },
+        {
+          "name": "Lá chuối"
+        }
+      ],
+      "steps": [
+        "Vệ sinh và làm lạnh dụng cụ; giữ thịt lạnh trong toàn bộ quá trình xay trộn.",
+        "Luộc chín bì, làm sạch mỡ, thái sợi thật mảnh và để khô ráo.",
+        "Xay thịt lạnh rồi trộn nhanh với gia vị và gói men đúng hướng dẫn của nhà sản xuất.",
+        "Trộn bì, tỏi và tiêu; chia phần, ép chặt, thêm lát tỏi ớt rồi bọc kín.",
+        "Ủ theo nhiệt độ và thời gian của gói men; bỏ ngay mẻ có mùi, màu hoặc cấu trúc bất thường."
+      ]
+    },
+    {
+      "slug": "nem-nuong",
+      "name": "Nem nướng",
+      "aliases": [
+        "Nem nướng"
+      ],
+      "region": "Nha Trang",
+      "category": "Món nướng",
+      "prepMinutes": 45,
+      "cookMinutes": 15,
+      "totalMinutes": 60,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/nem-nuong-nha-trang/",
+      "description": "Nem nướng Nha Trang là thịt heo quết dẻo nướng thơm, cuốn bánh tráng với rau và dùng cùng xốt.",
+      "commonsFileTitle": "File:Nem nướng.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/nem-nuong-nha-trang/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/nem-nuong-nha-trang/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/nem-nuong-nha-trang/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Thịt heo xay"
+        },
+        {
+          "name": "Mỡ heo"
+        },
+        {
+          "name": "Tỏi"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Nước mắm"
+        },
+        {
+          "name": "Đường"
+        },
+        {
+          "name": "Tiêu"
+        },
+        {
+          "name": "Bánh tráng"
+        },
+        {
+          "name": "Rau sống"
+        },
+        {
+          "name": "Dưa leo"
+        }
+      ],
+      "steps": [
+        "Giữ lạnh thịt và mỡ, trộn với tỏi, hành, nước mắm, đường và tiêu.",
+        "Quết hỗn hợp theo một chiều đến khi dẻo kết dính, sau đó làm lạnh lại.",
+        "Bọc thịt quanh que hoặc nặn thành miếng thuôn đều.",
+        "Nướng trên lửa vừa, trở thường xuyên đến khi nem chín và xém thơm.",
+        "Cuốn nem với bánh tráng, rau và dưa leo, dùng cùng xốt chấm."
+      ]
+    },
+    {
+      "slug": "xoi-xeo",
+      "name": "Xôi xéo",
+      "aliases": [
+        "Xôi xéo"
+      ],
+      "region": "Hà Nội",
+      "category": "Món xôi",
+      "prepMinutes": 20,
+      "cookMinutes": 50,
+      "totalMinutes": 70,
+      "difficulty": null,
+      "servings": 4,
+      "servingsText": "4 phần",
+      "metadataSourceUrl": "https://vietnamesecookbook.com/recipes/xoi-xeo/",
+      "description": "Xôi xéo Hà Nội gồm nếp vàng nghệ, đậu xanh nghiền thái lát và hành phi giòn.",
+      "commonsFileTitle": "File:Xôi xéo.jpg",
+      "sourceName": "Vị Việt",
+      "sourceUrl": "https://vietnamesecookbook.com/recipes/xoi-xeo/",
+      "sourceRevisionUrl": "https://vietnamesecookbook.com/recipes/xoi-xeo/",
+      "sourceLicenseName": "CC BY-SA 4.0",
+      "sourceLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "sourceAttribution": "Vị Việt biên soạn mới bằng tiếng Việt và đối chiếu các nguồn tham khảo; không sao chép nguyên văn và không tuyên bố đã được chuyên gia kiểm duyệt.",
+      "sourceModified": false,
+      "contentOrigin": "original_synthesis",
+      "verificationStatus": "cross_checked",
+      "verificationNote": "Vị Việt biên soạn và đối chiếu nguồn; chưa được chuyên gia kiểm duyệt.",
+      "references": [
+        {
+          "name": "Vietnamese Cookbook",
+          "url": "https://vietnamesecookbook.com/recipes/xoi-xeo/",
+          "publisher": "Vietnamese Cookbook",
+          "accessedAt": "2026-10-24"
+        },
+        {
+          "name": "List of Vietnamese dishes",
+          "url": "https://en.wikipedia.org/wiki/List_of_Vietnamese_dishes",
+          "publisher": "Wikipedia contributors",
+          "accessedAt": "2026-10-24"
+        }
+      ],
+      "ingredients": [
+        {
+          "name": "Gạo nếp"
+        },
+        {
+          "name": "Đậu xanh cà vỏ"
+        },
+        {
+          "name": "Bột nghệ"
+        },
+        {
+          "name": "Hành tím"
+        },
+        {
+          "name": "Dầu ăn hoặc mỡ gà"
+        },
+        {
+          "name": "Muối"
+        }
+      ],
+      "steps": [
+        "Ngâm riêng nếp và đậu xanh; trộn nếp với chút nghệ và muối.",
+        "Hấp đậu xanh đến mềm, giã hoặc xay mịn rồi nắm thành khối chắc.",
+        "Đồ nếp đến khi hạt chín dẻo và tơi, xới nhẹ để thoát hơi.",
+        "Thái hành tím mỏng, phi vàng giòn rồi vớt ra; giữ lại phần dầu thơm.",
+        "Xới xôi, thái mỏng đậu xanh phủ lên trên, thêm hành phi và rưới ít dầu hành."
+      ]
+    }
+  ]
+}

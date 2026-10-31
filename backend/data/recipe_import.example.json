@@ -1,0 +1,22 @@
+{
+  "dishes": [
+    {
+      "name": "Tên món",
+      "region": "Vùng miền",
+      "category": "Danh mục",
+      "prepMinutes": 0,
+      "cookMinutes": 0,
+      "difficulty": "Dễ",
+      "servings": 1,
+      "description": "Chỉ nhập nội dung đã được kiểm chứng và có quyền sử dụng.",
+      "imageUrl": null,
+      "imageAttribution": null,
+      "sourceUrl": "https://example.com/nguon-cong-thuc",
+      "sourceName": "Tên nguồn",
+      "ingredients": [
+        {"name": "Thay bằng nguyên liệu đã kiểm chứng", "quantity": null, "unit": null}
+      ],
+      "steps": ["Thay bằng bước nấu đã kiểm chứng từ nguồn được phép sử dụng."]
+    }
+  ]
+}

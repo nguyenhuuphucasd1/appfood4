@@ -1,0 +1,91 @@
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+.kaggle/
+**/kaggle.json
+**/access_token
+
+# Python environment, cache and coverage
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local caches and temporary files (kept on drive D only)
+.cache/
+.tmp/
+*.tmp
+*.log
+
+# Runtime database and database backups
+backend/data/*.db
+backend/data/*.db-*
+backend/data/*.sqlite
+backend/data/*.sqlite3
+*.db-journal
+
+# Large ML models, candidates and datasets
+backend/models/
+datasets/raw/
+datasets/processed/
+artifacts/
+
+# Local evaluation/export output in backend/data
+backend/data/*.csv
+backend/data/*.json
+!backend/data/recipe_import.example.json
+
+# Recipe catalogs, license records and audited dish media are source assets
+!backend/data/recipes/
+!backend/data/recipes/**
+!backend/static/dishes/
+!backend/static/dishes/**
+
+# Flutter/Dart generated output
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/build/
+mobile/coverage/
+mobile/android/.gradle/
+mobile/android/build/
+mobile/android/app/build/
+mobile/android/local.properties
+mobile/android/key.properties
+mobile/ios/Pods/
+mobile/ios/Flutter/ephemeral/
+mobile/macos/Pods/
+mobile/macos/Flutter/ephemeral/
+mobile/windows/flutter/ephemeral/
+mobile/linux/flutter/ephemeral/
+
+# Generated APK/app bundles and transient UI test captures
+*.apk
+*.aab
+mobile/test/failures/
+mobile/test/emulator-*.png
+mobile/test/e2e-*.png
+mobile/test/final-picker.png
+
+# IDE and user-specific workspace files
+.idea/
+*.iml
+.vscode/
+*.iws
+*.ipr
+
+# Keep shared Android Studio run configurations, ignore runtime logs inside it
+.run/*.log
+!.run/*.run.xml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

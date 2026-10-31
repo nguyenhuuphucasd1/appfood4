@@ -1,0 +1,4 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Chỉ cho phép HTTP local trong debug để Android Emulator gọi FastAPI. -->
+    <application android:usesCleartextTraffic="true" />
+</manifest>
