@@ -1,0 +1,59 @@
+\xpg@aux {}{vietnamese}
+\contentsline {chapter}{Lời cam đoan}{i}{chapter*.1}%
+\contentsline {chapter}{Lời cảm ơn}{ii}{chapter*.2}%
+\contentsline {chapter}{Tóm tắt}{iii}{chapter*.3}%
+\contentsline {chapter}{Danh mục từ viết tắt}{iv}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Mở đầu}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Lý do chọn đề tài}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Mục tiêu của đồ án}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Đối tượng sử dụng}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Phạm vi và giới hạn}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Bố cục báo cáo}{3}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Cơ sở lý thuyết và công nghệ}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Bài toán phân loại ảnh nhiều lớp}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Transformer và cơ chế tự chú ý}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Vision Transformer}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Các độ đo đánh giá}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Kiến trúc client--server và REST API}{5}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Lưu trữ và bảo mật}{6}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Công cụ và thư viện}{6}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Dữ liệu và các công trình liên quan}{6}{section.2.8}%
+\contentsline {chapter}{\numberline {3}Phân tích và thiết kế}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Phân tích bài toán}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Yêu cầu chức năng}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Yêu cầu phi chức năng}{8}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Luồng nhận diện món ăn}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Thiết kế kiến trúc hệ thống}{12}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Thiết kế API và trình tự xử lý}{13}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Thiết kế cơ sở dữ liệu}{14}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Thiết kế kho công thức và giấy phép}{16}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Thiết kế model nhận diện}{17}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Cài đặt và thử nghiệm}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Môi trường triển khai}{18}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Cài đặt backend}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Cơ sở dữ liệu và catalog công thức}{19}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Cài đặt ứng dụng Flutter}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Giao diện ứng dụng}{20}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Chiến lược kiểm thử}{21}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Kết quả và đánh giá}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Mức độ hoàn thành mục tiêu}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Kết quả dữ liệu công thức}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Audit và làm sạch 30VNFoods}{23}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Kết quả đánh giá model}{26}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Kết quả kiểm thử phần mềm}{29}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Bàn luận}{29}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Hạn chế}{31}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Kết luận và hướng phát triển}{32}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Kết luận}{32}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Bài học rút ra}{32}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Hướng phát triển}{33}{section.6.3}%
+\contentsline {chapter}{Tài liệu tham khảo}{34}{section*.25}%
+\contentsline {chapter}{Phụ lục}{36}{chapter*.27}%
+\contentsline {section}{A. Hướng dẫn cài đặt và chạy chương trình}{36}{section*.28}%
+\contentsline {section}{B. Danh sách API}{36}{section*.29}%
+\contentsline {section}{C. Danh sách 38 món}{37}{section*.30}%
+\contentsline {section}{D. Độ đo chi tiết theo lớp}{38}{section*.31}%
+\contentsline {section}{E. Dữ liệu, giấy phép và quyền riêng tư}{40}{section*.32}%
+\contentsline {section}{F. Tuyên bố sử dụng công cụ AI hỗ trợ}{40}{section*.33}%
+\contentsline {section}{G. Bảng tự kiểm trước khi nộp}{40}{section*.34}%
+\contentsline {section}{H. Nhận xét của giảng viên hướng dẫn}{41}{section*.35}%

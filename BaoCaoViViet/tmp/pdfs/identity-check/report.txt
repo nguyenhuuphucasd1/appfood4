@@ -1,0 +1,2557 @@
+BỘ GIÁO DỤC VÀ ĐÀO TẠO
+
+TRƯỜNG ĐẠI HỌC KIẾN TRÚC ĐÀ NẴNG
+KHOA CÔNG NGHỆ THÔNG TIN
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+Học phần AIP202 ꞏ 2 tín chỉ
+
+XÂY DỰNG HỆ THỐNG GỢI Ý VÀ
+TÌM KIẾM CÔNG THỨC NẤU ĂN
+Sinh viên thực hiện
+
+: NGUYỄN HỮU PHÚC
+(2351220005)
+
+Lớp
+
+: 23CT1
+
+Ngành
+
+: Công nghệ thông tin
+
+Giảng viên hướng dẫn : TS. Đỗ Phúc Hảo
+Năm học
+
+: 2026–2027
+
+Đà Nẵng ꞏ 2026–2027
+
+Lời cam đoan
+Tôi cam đoan báo cáo này phản ánh đúng sản phẩm và các kết quả kiểm thử
+của đồ án Xây dựng hệ thống gợi ý và tìm kiếm công thức nấu ăn. Những số
+liệu về dữ liệu, mô hình, công thức và phần mềm đều được đối chiếu với mã
+nguồn hoặc tệp kết quả kèm theo. Các tài liệu, mô hình tiền huấn luyện, bộ dữ
+liệu, công thức và hình ảnh của bên thứ ba đều được ghi nguồn trong báo cáo.
+Trong quá trình thực hiện, công cụ trí tuệ nhân tạo được sử dụng để hỗ trợ
+tra cứu, rà soát mã nguồn, gợi ý cách trình bày và kiểm tra tài liệu. Tôi chịu trách
+nhiệm kiểm chứng nội dung, hiểu giải pháp và giải thích được toàn bộ hệ thống.
+Công cụ hỗ trợ không thay thế trách nhiệm học thuật của người thực hiện.
+Tôi chịu trách nhiệm về tính trung thực của báo cáo và sản phẩm đồ án.
+
+Đà Nẵng, ngày … tháng … năm …
+
+Sinh viên thực hiện
+
+NGUYỄN HỮU PHÚC
+
+i
+
+Lời cảm ơn
+Tôi xin chân thành cảm ơn giảng viên hướng dẫn đã góp ý về phạm vi, phương
+pháp thực hiện và cách đánh giá đồ án. Tôi cũng cảm ơn các giảng viên Khoa
+Công nghệ Thông tin đã cung cấp kiến thức nền tảng về lập trình, cơ sở dữ liệu,
+phát triển ứng dụng và trí tuệ nhân tạo.
+Đồ án sử dụng các tài nguyên mở và công cụ do cộng đồng phát triển, gồm
+Flutter, FastAPI, PyTorch, Transformers, SQLite, bộ dữ liệu 30VNFoods và mô
+hình nhận diện món Việt được công bố trên Hugging Face. Tôi trân trọng ghi
+nhận đóng góp của các tác giả và cộng đồng duy trì những tài nguyên này.
+Do giới hạn thời gian và kinh nghiệm, báo cáo khó tránh khỏi thiếu sót. Tôi
+mong nhận được góp ý để tiếp tục hoàn thiện hệ thống.
+
+NGUYỄN HỮU PHÚC
+
+ii
+
+Tóm tắt
+Ẩm thực Việt Nam đa dạng theo vùng miền, trong khi người dùng đôi khi chỉ có
+ảnh món ăn mà không biết tên để tìm công thức phù hợp. Đồ án xây dựng hệ
+thống Vị Việt nhằm kết hợp khám phá công thức có nguồn với nhận diện món
+ăn từ ảnh trên thiết bị di động. Ứng dụng Flutter giao tiếp với backend FastAPI
+qua HTTP; dữ liệu nghiệp vụ được lưu bằng SQLite và SQLAlchemy. Ảnh JPEG
+hoặc PNG được xử lý bởi mô hình Vision Transformer ViT-L/16 tiền huấn luyện,
+sau đó nhãn dự đoán được chuẩn hóa và ánh xạ tới bản ghi món ăn trong cơ
+sở dữ liệu. Hệ thống hiện quản lý 38 món đã xuất bản, 38 ảnh có metadata giấy
+phép, 348 nguyên liệu, 205 bước nấu và 85 nguồn tham khảo. Tám công thức
+được dịch và chuẩn hóa từ nguồn mở; ba mươi công thức còn lại do Vị Việt
+biên soạn và đối chiếu tối thiểu hai nguồn. Bộ dữ liệu 30VNFoods gồm 25.136
+ảnh thuộc 30 lớp được audit và tạo manifest sạch còn 25.032 ảnh; tập kiểm thử
+sạch gồm 5.014 ảnh được dùng để đánh giá độc lập 30 lớp giao nhau với model.
+Ngoài nhận diện, ứng dụng hỗ trợ tìm kiếm, lọc, yêu thích, lịch sử, phản hồi kết
+quả và hiển thị nguồn–bản quyền. Hệ thống chứng minh khả năng kết hợp mô
+hình thị giác tiền huấn luyện với một kho công thức có thể truy nguyên trong một
+ứng dụng mobile hoàn chỉnh, đồng thời chỉ rõ giới hạn khi tập đánh giá chưa bao
+phủ đủ 38 nhãn của model.
+Từ khoá: nhận diện món ăn, Vision Transformer, Flutter, FastAPI, công thức
+món Việt, 30VNFoods.
+
+iii
+
+Danh mục từ viết tắt
+API
+
+Application Programming Interface – giao diện lập trình ứng dụng
+
+AI
+
+Artificial Intelligence – trí tuệ nhân tạo
+
+ERD
+
+Entity–Relationship Diagram – sơ đồ thực thể–liên kết
+
+HTTP
+
+Hypertext Transfer Protocol
+
+JWT
+
+JSON Web Token
+
+ORM
+
+Object–Relational Mapping
+
+RGB
+
+Red, Green, Blue
+
+UI/UX
+
+User Interface/User Experience
+
+ViT
+
+Vision Transformer
+
+iv
+
+Mục lục
+Lời cam đoan
+
+i
+
+Lời cảm ơn
+
+ii
+
+Tóm tắt
+
+iii
+
+Danh mục từ viết tắt
+
+iv
+
+Danh mục giải thuật
+
+x
+
+1 Mở đầu
+
+1
+
+1.1 Lý do chọn đề tài . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+1
+
+1.2 Mục tiêu của đồ án . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+
+1.3 Đối tượng sử dụng . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+
+1.4 Phạm vi và giới hạn . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+
+1.5 Bố cục báo cáo . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3
+
+2 Cơ sở lý thuyết và công nghệ
+
+4
+
+2.1 Bài toán phân loại ảnh nhiều lớp . . . . . . . . . . . . . . . . . . .
+
+4
+
+2.2 Transformer và cơ chế tự chú ý . . . . . . . . . . . . . . . . . . . .
+
+4
+
+2.3 Vision Transformer . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.4 Các độ đo đánh giá . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+
+2.5 Kiến trúc client–server và REST API . . . . . . . . . . . . . . . . .
+
+5
+
+2.6 Lưu trữ và bảo mật . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+
+2.7 Công cụ và thư viện . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+6
+
+2.8 Dữ liệu và các công trình liên quan . . . . . . . . . . . . . . . . . .
+
+6
+
+v
+
+MỤC LỤC
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+3 Phân tích và thiết kế
+
+8
+
+3.1 Phân tích bài toán . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+3.2 Yêu cầu chức năng . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+3.3 Yêu cầu phi chức năng . . . . . . . . . . . . . . . . . . . . . . . .
+
+8
+
+3.4 Luồng nhận diện món ăn . . . . . . . . . . . . . . . . . . . . . . .
+
+10
+
+3.5 Thiết kế kiến trúc hệ thống . . . . . . . . . . . . . . . . . . . . . .
+
+12
+
+3.6 Thiết kế API và trình tự xử lý . . . . . . . . . . . . . . . . . . . . .
+
+13
+
+3.7 Thiết kế cơ sở dữ liệu . . . . . . . . . . . . . . . . . . . . . . . . .
+
+14
+
+3.8 Thiết kế kho công thức và giấy phép . . . . . . . . . . . . . . . . .
+
+16
+
+3.9 Thiết kế model nhận diện . . . . . . . . . . . . . . . . . . . . . . .
+
+17
+
+4 Cài đặt và thử nghiệm
+
+18
+
+4.1 Môi trường triển khai . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+18
+
+4.2 Cài đặt backend . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+18
+
+4.3 Cơ sở dữ liệu và catalog công thức . . . . . . . . . . . . . . . . .
+
+19
+
+4.4 Cài đặt ứng dụng Flutter . . . . . . . . . . . . . . . . . . . . . . . .
+
+19
+
+4.5 Giao diện ứng dụng . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+20
+
+4.6 Chiến lược kiểm thử . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+21
+
+5 Kết quả và đánh giá
+
+23
+
+5.1 Mức độ hoàn thành mục tiêu . . . . . . . . . . . . . . . . . . . . .
+
+23
+
+5.2 Kết quả dữ liệu công thức . . . . . . . . . . . . . . . . . . . . . . .
+
+23
+
+5.3 Audit và làm sạch 30VNFoods . . . . . . . . . . . . . . . . . . . .
+
+23
+
+5.4 Kết quả đánh giá model . . . . . . . . . . . . . . . . . . . . . . . .
+
+26
+
+5.5 Kết quả kiểm thử phần mềm . . . . . . . . . . . . . . . . . . . . .
+
+29
+
+5.6 Bàn luận . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+29
+
+5.7 Hạn chế . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+31
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+vi
+
+MỤC LỤC
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+6 Kết luận và hướng phát triển
+
+32
+
+6.1 Kết luận . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+32
+
+6.2 Bài học rút ra . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+32
+
+6.3 Hướng phát triển . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+33
+
+Tài liệu tham khảo
+
+34
+
+Phụ lục
+
+36
+
+A. Hướng dẫn cài đặt và chạy chương trình . . . . . . . . . . . . . . .
+
+36
+
+B. Danh sách API . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+36
+
+C. Danh sách 38 món . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+37
+
+D. Độ đo chi tiết theo lớp . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+39
+
+E. Dữ liệu, giấy phép và quyền riêng tư . . . . . . . . . . . . . . . . . .
+
+40
+
+F. Tuyên bố sử dụng công cụ AI hỗ trợ . . . . . . . . . . . . . . . . . .
+
+40
+
+G. Bảng tự kiểm trước khi nộp . . . . . . . . . . . . . . . . . . . . . . .
+
+40
+
+H. Nhận xét của giảng viên hướng dẫn . . . . . . . . . . . . . . . . . .
+
+41
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+vii
+
+Danh sách hình vẽ
+3.1 Sơ đồ Use Case tổng thể của Vị Việt. . . . . . . . . . . . . . . . .
+
+9
+
+3.2 Activity Diagram của luồng nhận diện và mở công thức. . . . . .
+
+11
+
+3.3 Kiến trúc tổng thể Flutter–FastAPI–SQLite–ViT. . . . . . . . . . .
+
+12
+
+3.4 Sequence Diagram cho endpoint POST /predict. . . . . . . . . . .
+
+13
+
+3.5 ERD của chín bảng trong cơ sở dữ liệu Vị Việt. . . . . . . . . . .
+
+15
+
+3.6 Pipeline suy luận của model ViT-L/16. . . . . . . . . . . . . . . . .
+
+17
+
+4.1 Các màn hình đăng nhập, trang chủ và danh mục. . . . . . . . .
+
+20
+
+4.2 Luồng nhận diện và xem công thức có nguồn. . . . . . . . . . . .
+
+21
+
+5.1 Phân bố các split sau khi loại ảnh trùng và mâu thuẫn. . . . . . .
+
+24
+
+5.2 Số ảnh sạch theo từng lớp trong toàn bộ ba split. . . . . . . . . .
+
+25
+
+5.3 F1 theo từng lớp trên tập Test sạch. . . . . . . . . . . . . . . . . .
+
+27
+
+5.4 Ma trận nhầm lẫn chuẩn hóa; tám nhãn ngoài dataset được gộp
+thành một cột. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+28
+
+viii
+
+Danh sách bảng
+2.1 Các thành phần chính của hệ thống. . . . . . . . . . . . . . . . . .
+
+6
+
+3.1 Các yêu cầu chức năng chính. . . . . . . . . . . . . . . . . . . . .
+
+9
+
+4.1 Nhóm kiểm thử của hệ thống. . . . . . . . . . . . . . . . . . . . . .
+
+22
+
+5.1 Thống kê kho công thức sau audit. . . . . . . . . . . . . . . . . . .
+
+24
+
+5.2 Kết quả đánh giá trên tập Test sạch. . . . . . . . . . . . . . . . . .
+
+26
+
+5.3 Các cặp nhầm lẫn xuất hiện nhiều nhất. . . . . . . . . . . . . . . .
+
+29
+
+5.4 Kết quả kiểm thử và build tại lần nghiệm thu báo cáo. . . . . . .
+
+30
+
+6.1 Các endpoint chính của backend. . . . . . . . . . . . . . . . . . .
+
+36
+
+6.2 Độ đo theo từng lớp trên tập Test sạch. . . . . . . . . . . . . . . .
+
+39
+
+ix
+
+Danh mục giải thuật
+3.1
+
+Nhận diện ảnh và ánh xạ công thức . . . . . . . . . . . . . . . .
+
+x
+
+17
+
+1
+Mở đầu
+MỤC TIÊU CHƯƠNG
+
+Chương này trình bày bối cảnh, vấn đề cần giải quyết, mục tiêu đo lường
+được, phạm vi và bố cục của đồ án Vị Việt.
+
+1.1
+
+Lý do chọn đề tài
+
+Ẩm thực Việt Nam có số lượng món lớn, tên gọi và biến thể khác nhau theo vùng
+miền. Khi bắt gặp một món ăn qua ảnh, người dùng có thể không biết tên chính
+xác để tìm kiếm. Ngược lại, kết quả tìm kiếm trên Internet thường phân tán, khó
+phân biệt nội dung có nguồn với nội dung được sao chép hoặc tạo tự động. Hai
+khó khăn này tạo ra nhu cầu về một hệ thống vừa nhận diện món qua ảnh, vừa
+dẫn người dùng đến công thức có thể truy nguyên.
+Nhận diện món ăn là một bài toán phân loại ảnh nhiều lớp. Food-101 cho thấy
+đây là bài toán khó do sự khác biệt lớn về cách trình bày, ánh sáng và nền ảnh,
+đồng thời nhiều món có hình thức gần giống nhau [2]. Với món Việt, 30VNFoods
+cung cấp 25.136 ảnh thuộc 30 lớp và là nguồn phù hợp để đánh giá model trong
+phạm vi đề tài [3]. Đồ án chọn cách khai thác mô hình ViT tiền huấn luyện thay vì
+huấn luyện mạng mới từ đầu, nhờ đó tập trung nguồn lực vào tích hợp hệ thống,
+chất lượng dữ liệu công thức và trải nghiệm mobile.
+Sản phẩm được đặt tên Vị Việt, hướng đến trải nghiệm tối giản: người dùng
+có thể tìm món bằng chữ hoặc chụp/chọn ảnh, xem kết quả Top 1 kèm độ tin
+cậy, rồi mở đúng công thức tương ứng. Công thức và ảnh chỉ được xuất bản khi
+có metadata nguồn và giấy phép hợp lệ.
+
+1
+
+Chương 1. Mở đầu
+
+1.2
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Mục tiêu của đồ án
+
+Đồ án hướng tới các mục tiêu cụ thể sau:
+• Xây dựng ứng dụng Flutter chạy trên Android, hỗ trợ chế độ khách, đăng
+ký, đăng nhập và quản lý phiên.
+• Tích hợp model ViT-L/16 gồm 38 nhãn món Việt; hỗ trợ ảnh JPEG/PNG,
+trả tên món, độ tin cậy và dữ liệu món được ánh xạ từ database.
+• Cung cấp danh mục 38 món có ảnh, nguyên liệu, bước nấu, thời gian, khẩu
+phần, nguồn công thức và metadata giấy phép.
+• Hỗ trợ tìm kiếm, lọc, yêu thích, lịch sử nhận diện, phản hồi nhãn đúng và
+chỉnh sửa tên tài khoản.
+• Xây dựng backend FastAPI có kiểm tra đầu vào, xác thực JWT, migration,
+audit dữ liệu và tài liệu OpenAPI.
+• Đánh giá model trên toàn bộ 5.014 ảnh thuộc tập Test sạch của 30 lớp giao
+nhau giữa 30VNFoods và model; báo cáo trung thực giới hạn tám nhãn
+chưa được bộ dữ liệu này bao phủ.
+
+1.3
+
+Đối tượng sử dụng
+
+Đối tượng chính là người quan tâm tới món ăn Việt và muốn khám phá công
+thức bằng tên món hoặc hình ảnh. Khách có thể xem danh mục, tìm kiếm và
+nhận diện. Người dùng đăng nhập có thêm khả năng lưu yêu thích, xem/xóa lịch
+sử và gửi phản hồi khi kết quả chưa đúng. Đối tượng kỹ thuật gồm người quản lý
+dữ liệu công thức và lập trình viên cần audit, import hoặc triển khai lại hệ thống.
+
+1.4
+
+Phạm vi và giới hạn
+
+Phạm vi nhận diện được giới hạn ở 38 nhãn trong cấu hình model. Giao diện chỉ
+hiển thị Top 1 để tối giản; backend vẫn lưu Top 3 cho lịch sử và đánh giá. Ảnh
+người dùng chỉ được giữ trong bộ nhớ trong lúc suy luận, không được ghi vào ổ
+đĩa hoặc database. Đồ án chưa huấn luyện lại model production, chưa triển khai
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+2
+
+Chương 1. Mở đầu
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+backend công khai và chưa tối ưu cho nhiều API instance. SQLite phù hợp với
+demo đơn máy nhưng không thay thế hệ quản trị cơ sở dữ liệu cho production.
+Dataset 30VNFoods là dữ liệu ảnh phục vụ audit và đánh giá, không phải
+database công thức. Tám nhãn model không xuất hiện trong dataset nên các độ
+đo trên tập Test chỉ phản ánh 30 lớp giao nhau. Công thức được biên soạn hoặc
+dịch từ nguồn có thể truy nguyên, nhưng không được tuyên bố là nội dung đã
+qua chuyên gia ẩm thực kiểm duyệt.
+
+1.5
+
+Bố cục báo cáo
+
+Phần còn lại của báo cáo được tổ chức như sau. Chương 2 trình bày cơ sở lý
+thuyết và công nghệ. Chương 3 phân tích yêu cầu và thiết kế hệ thống. Chương 4
+mô tả quá trình cài đặt, dữ liệu, giao diện và kiểm thử. Chương 5 trình bày kết
+quả đánh giá, bàn luận và hạn chế. Chương 6 tổng kết và đề xuất hướng phát
+triển.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+3
+
+2
+Cơ sở lý thuyết và công nghệ
+MỤC TIÊU CHƯƠNG
+
+Chương này tóm lược những khái niệm trực tiếp được sử dụng trong hệ
+thống: phân loại ảnh, Transformer, Vision Transformer, các độ đo đánh giá
+và nền tảng phần mềm triển khai.
+
+2.1
+
+Bài toán phân loại ảnh nhiều lớp
+
+Với ảnh đầu vào x và tập nhãn hữu hạn Y = {1, . . . , K}, bộ phân loại học hàm
+f : x 7→ y để chọn một nhãn y ∈ Y . Trong đồ án, K = 38 và mỗi nhãn biểu diễn
+một món ăn. Model sinh vector điểm thô z ∈ RK . Xác suất lớp k được tính bằng
+Softmax:
+exp(zk )
+.
+(2.1)
+p(y = k | x) = ∑K
+exp
+(z
+)
+j
+j=1
+Nhãn có xác suất lớn nhất là Top 1; ba nhãn lớn nhất tạo thành Top 3. Xác suất
+cao không đồng nghĩa chắc chắn tuyệt đối, vì model vẫn có thể tự tin ở ảnh ngoài
+phân phối hoặc các món có hình thức gần nhau.
+
+2.2
+
+Transformer và cơ chế tự chú ý
+
+Transformer thay thế xử lý tuần tự bằng cơ chế self-attention, cho phép mỗi token
+tổng hợp thông tin từ các token khác [12]. Với ma trận truy vấn Q, khóa K và giá
+trị V , scaled dot-product attention được tính theo:
+(
+
+Attention(Q, K, V ) = softmax
+
+QK T
+√
+dk
+
+)
+V,
+
+(2.2)
+
+trong đó dk là số chiều của vector khóa. Multi-head attention thực hiện nhiều
+phép attention song song để học các quan hệ khác nhau.
+4
+
+Chương 2. Cơ sở lý thuyết và công nghệ
+
+2.3
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Vision Transformer
+
+Vision Transformer (ViT) chia ảnh thành các patch không chồng lấn, biến mỗi
+patch thành một token, thêm positional embedding và token phân lớp [4]. Ảnh
+384×384 với patch 16×16 tạo ra 24 × 24 = 576 patch. Chuỗi 576 token ảnh cùng
+token phân lớp đi qua 24 Transformer encoder của cấu hình ViT-L/16. Vector ở
+token phân lớp được đưa vào lớp tuyến tính để sinh logits cho 38 món.
+ViT tận dụng tốt học chuyển giao khi được tiền huấn luyện trên dữ liệu lớn. Đồ
+án dùng model VietTung04/vit‐l‐16‐food‐classifier, một phiên bản ViT-L/16 đã
+được fine-tune cho món Việt và công bố theo giấy phép Apache-2.0 [13]. Model
+được tải một lần, lưu local và chạy ở chế độ eval kết hợp torch.inference_mode.
+
+2.4
+
+Các độ đo đánh giá
+
+Với mỗi lớp, T P , F P và F N lần lượt là số dự đoán đúng, dương tính giả và âm
+tính giả. Các độ đo được tính theo:
+Accuracy =
+
+số dự đoán đúng
+,
+tổng số mẫu
+
+TP
+,
+TP + FP
+TP
+Recall =
+,
+TP + FN
+2 Precision Recall
+.
+F1 =
+Precision + Recall
+
+Precision =
+
+(2.3)
+(2.4)
+(2.5)
+(2.6)
+
+Macro average là trung bình không trọng số của 30 lớp đánh giá, nhờ đó mỗi lớp
+có đóng góp ngang nhau dù số ảnh khác nhau. Ma trận nhầm lẫn cho biết các
+cặp lớp model thường dự đoán lẫn nhau.
+
+2.5
+
+Kiến trúc client–server và REST API
+
+Ứng dụng Flutter đóng vai trò client, còn FastAPI cung cấp tài nguyên qua
+HTTP/JSON và nhận ảnh dưới dạng multipart. FastAPI dựa trên chuẩn OpenAPI
+và tự sinh Swagger UI, thuận tiện cho kiểm thử contract [9]. Flutter khuyến nghị
+tách UI, trạng thái, repository và service để giảm phụ thuộc và tăng khả năng
+kiểm thử [5]. Dự án hiện dùng screen/widget ở lớp UI, AppState cho trạng thái và
+ApiClient cùng AiService cho lớp dữ liệu.
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+5
+
+Chương 2. Cơ sở lý thuyết và công nghệ
+
+2.6
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Lưu trữ và bảo mật
+
+SQLite là database nhúng, serverless, giao dịch và lưu toàn bộ dữ liệu trong một
+tệp [11]. SQLAlchemy ánh xạ lớp Python sang bảng quan hệ, quản lý session,
+transaction và relationship [10]. Mật khẩu được băm bằng Argon2, một hàm
+memory-hard được mô tả trong RFC 9106 [1]. Access token và refresh token
+tuân theo cấu trúc JWT của RFC 7519 [7]; refresh token còn có phiên trong
+database để hỗ trợ xoay vòng và thu hồi.
+
+2.7
+
+Công cụ và thư viện
+Bảng 2.1. Các thành phần chính của hệ thống.
+
+Thành phần
+
+Phiên bản kiểm chứng
+
+Vai trò
+
+Flutter
+
+3.47.2
+
+Ứng dụng mobile đa nền tảng
+
+Dart
+
+3.13.x
+
+Ngôn ngữ của Flutter
+
+Python
+
+3.13.7
+
+Backend, audit và suy luận AI
+
+FastAPI
+
+0.141.1
+
+REST API, validation và OpenAPI
+
+PyTorch
+
+2.14.0+cpu
+
+Tensor và suy luận model [8]
+
+Transformers
+
+5.17.0
+
+Processor và ViT [6]
+
+SQLAlchemy
+
+2.1.3
+
+ORM và transaction
+
+SQLite
+
+3.x
+
+Database cục bộ
+
+Android Studio
+
+Bản cài hiện tại
+
+Emulator, build và chạy Flutter
+
+Phiên bản trong Bảng 2.1 mô tả môi trường đã kiểm chứng của đồ án; giới hạn
+dependency chính xác vẫn được quản lý trong requirements.txt và pubspec.yaml.
+
+2.8
+
+Dữ liệu và các công trình liên quan
+
+Food-101 đặt nền móng cho đánh giá nhận diện món ăn quy mô lớn với 101.000
+ảnh thuộc 101 lớp [2]. 30VNFoods tập trung vào 30 món Việt và công bố 25.136
+ảnh [3]. Model sử dụng trong đồ án kế thừa ViT-L/16 và được tác giả model finetune trên 30VNFoods kết hợp dữ liệu tự thu thập [13]. Khác với công trình chỉ
+tập trung phân loại, Vị Việt tích hợp model vào luồng ứng dụng có xác thực, lịch
+sử, phản hồi và kho công thức có metadata nguồn.
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+6
+
+Chương 2. Cơ sở lý thuyết và công nghệ
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Với dữ liệu công thức, tám món được dịch và chuẩn hóa từ Wikibooks theo
+điều kiện CC BY-SA 4.0 [14]. Ảnh giao diện được chọn theo metadata riêng của
+từng tệp trên Wikimedia Commons/Openverse; việc sử dụng ảnh tuân theo yêu
+cầu attribution và giấy phép của tệp [15].
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+7
+
+3
+Phân tích và thiết kế
+MỤC TIÊU CHƯƠNG
+
+Chương này phân tích yêu cầu của Vị Việt, mô tả kiến trúc, dữ liệu, luồng
+nhận diện và cấu hình model được tích hợp trong sản phẩm.
+
+3.1
+
+Phân tích bài toán
+
+Hệ thống cần giải quyết hai đường vào cùng hội tụ về một kho công thức. Với
+tìm kiếm văn bản, người dùng nhập tên hoặc từ khóa; backend chuẩn hóa chuỗi
+và trả danh sách món phù hợp. Với nhận diện ảnh, client gửi JPEG/PNG; model
+sinh nhãn, backend chuẩn hóa nhãn đó rồi tìm bản ghi dishes. Đầu ra cuối cùng
+là món chuẩn, ảnh minh họa, thời gian, khẩu phần, nguyên liệu, các bước thực
+hiện và metadata nguồn.
+Hai nhóm tác nhân được trình bày ở Hình 3.1. Khách sử dụng các chức năng
+không cá nhân hóa. Người dùng đăng nhập có thêm yêu thích, lịch sử, phản hồi
+và hồ sơ. Không có trang quản trị trong phạm vi đồ án; dữ liệu công thức được
+cập nhật bằng catalog JSON và importer có kiểm tra.
+
+3.2
+
+Yêu cầu chức năng
+
+3.3
+
+Yêu cầu phi chức năng
+
+• Đúng dữ liệu: không xuất bản công thức khi thiếu nguồn, nguyên liệu,
+bước nấu hoặc metadata ảnh.
+• Bảo mật: mật khẩu băm Argon2; JWT có hạn dùng; refresh token xoay
+vòng và có thể thu hồi; secret production phải đủ mạnh.
+8
+
+Chương 3. Phân tích và thiết kế
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Hệ thống Vị Việt
+
+Xem/tìm kiếm công thức
+
+Quản lý yêu thích
+
+Xem chi tiết và nguồn
+
+Xem/xóa lịch sử
+
+Nhận diện món từ ảnh
+
+Gửi phản hồi nhãn đúng
+
+Đăng ký/đăng nhập
+
+Sửa tên/đăng xuất
+
+Khách
+
+Người dùng
+đăng nhập
+
+Hình 3.1. Sơ đồ Use Case tổng thể của Vị Việt.
+
+Bảng 3.1. Các yêu cầu chức năng chính.
+Mã
+
+Mô tả
+
+Tác nhân
+
+FR01
+
+Đăng ký, đăng nhập, refresh token và đăng xuất.
+
+Người
+dùng
+
+FR02
+
+Xem, tìm kiếm và lọc danh mục món.
+
+Tất cả
+
+FR03
+
+Xem chi tiết công thức, nguồn và giấy phép.
+
+Tất cả
+
+FR04
+
+Chụp/chọn ảnh, gửi nhận diện và xem Top 1.
+
+Tất cả
+
+FR05
+
+Mở trực tiếp công thức của món đã nhận diện.
+
+Tất cả
+
+FR06
+
+Thêm hoặc bỏ món yêu thích.
+
+Đăng nhập
+
+FR07
+
+Xem, xóa lịch sử và gửi phản hồi nhãn đúng.
+
+Đăng nhập
+
+FR08
+
+Đọc hồ sơ và thay đổi họ tên.
+
+Đăng nhập
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+9
+
+Chương 3. Phân tích và thiết kế
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+• Quyền riêng tư: ảnh nhận diện không được lưu; lịch sử chỉ lưu nhãn,
+confidence, Top 3 và thời điểm.
+• Khả dụng: giao diện tiếng Việt, vùng chạm đủ lớn, có trạng thái loading,
+lỗi, rỗng và fallback ảnh.
+• Tương thích: Android Emulator dùng 10.0.2.2; URL thiết bị thật cấu hình
+bằng API_BASE_URL.
+• Bảo trì: database có migration; importer idempotent theo slug; model và
+dataset tách khỏi Git.
+
+3.4
+
+Luồng nhận diện món ăn
+
+Hình 3.2 mô tả toàn bộ luồng từ lúc chọn ảnh đến khi mở công thức. Ảnh sai
+định dạng hoặc không giải mã được bị chặn trước khi suy luận. Nếu nhãn model
+không ánh xạ được tới database, client không tự chọn một món khác. Đây là
+nguyên tắc quan trọng để tránh hiển thị công thức sai.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+10
+
+Chương 3. Phân tích và thiết kế
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Bắt đầu
+
+Chụp hoặc chọn ảnh
+
+Không
+
+Ảnh hợp lệ?
+
+Thông báo lỗi
+và chọn lại
+
+có
+
+Gửi multipart /predict
+
+ViT suy luận và lấy Top 3
+
+Không
+
+Báo lỗi ánh xạ
+
+Ánh xạ được món?
+
+có
+
+Hiển thị Top 1
+và độ tin cậy
+
+Mở công thức?
+
+Không
+
+Chụp ảnh khác
+
+có
+
+Mở đúng RecipeDetail
+
+Kết thúc
+
+Hình 3.2. Activity Diagram của luồng nhận diện và mở công thức.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+11
+
+Chương 3. Phân tích và thiết kế
+
+3.5
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Thiết kế kiến trúc hệ thống
+
+Kiến trúc ở Hình 3.3 gồm ba vùng. Ứng dụng Flutter đảm nhiệm giao diện, trạng
+thái phiên và gọi dịch vụ. FastAPI kiểm tra request, xác thực, thực thi nghiệp vụ
+và chuẩn hóa response. Tầng tài nguyên gồm SQLite, model ViT local, catalog
+công thức và 38 ảnh WebP.
+Tầng ứng dụng và API
+Người dùng
+thiết bị Android
+
+thao tác
+
+Ứng dụng FlutterHTTP/JSON, multipartFastAPI backend
+router, validation, auth
+UI, AppState, services
+
+Dữ liệu công thức
+catalog + 38 ảnh WebP
+
+SQLite/SQLAlchemynhãn chuẩn hóaModel ViT-L/16 local
+9 bảng nghiệp vụ
+processor + 38 nhãn
+
+Tầng dữ liệu và mô hình
+
+Hình 3.3. Kiến trúc tổng thể Flutter–FastAPI–SQLite–ViT.
+
+Model được nạp theo singleton và giữ trong bộ nhớ. Suy luận CPU được khóa
+ở đoạn processor/model để tránh nhiều request đồng thời làm cạn RAM, trong
+khi FastAPI đưa công việc sang worker thread để không chặn event loop. Media
+được phục vụ qua /media; database chỉ lưu đường dẫn tương đối.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+12
+
+Chương 3. Phân tích và thiết kế
+
+3.6
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Thiết kế API và trình tự xử lý
+
+Các router được chia theo auth, user, dish và activity. Biên API dùng JSON
+camelCase; nội bộ Python và database dùng snake_case. Request nhận diện là
+multipart field image, chấp nhận JPEG/PNG tối đa 10 MB. Trình tự chi tiết được
+minh họa ở Hình 3.4.
+Flutter
+
+FastAPI
+
+ViT-L/16
+
+SQLite
+
+POST /predict + ảnh
+processor(RGB 384)
+logits, Softmax, Top 3
+tìm normalized_name
+recognizedDish + recipe
+nếu đăng nhập: lưu lịch sử
+prediction + Top 3 + món
+mở công thức Top 1
+
+Ảnh upload chỉ tồn tại trong
+bộ nhớ request, không ghi
+vào database hoặc ổ đĩa.
+
+Hình 3.4. Sequence Diagram cho endpoint POST /predict.
+
+Response vẫn chứa Top 3 cho lịch sử và khả năng đánh giá, nhưng màn
+hình chính chỉ hiển thị Top 1. Khi request có access token hợp lệ, backend tạo
+prediction_history; khi là khách, predictionId bằng null.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+13
+
+Chương 3. Phân tích và thiết kế
+
+3.7
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Thiết kế cơ sở dữ liệu
+
+Database có chín bảng như Hình 3.5. Bảng dishes là thực thể trung tâm của kho
+công thức. Ba bảng con lưu nguyên liệu, bước nấu và nguồn tham khảo theo
+thứ tự. favorites là bảng nối giữa user và dish. Lịch sử và phản hồi lưu chuỗi
+nhãn thay vì khóa ngoại dish, bởi phản hồi có thể đề cập nhãn model chưa ánh
+xạ được; vì vậy ERD không tạo quan hệ FK giả giữa prediction và dishes.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+14
+
+1:N
+
+favorites
+id PK, user_id FK, dish_id FK,
+created_at
+UQ(user_id,dish_id)
+
+1:N
+
+Chương 3. Phân tích và thiết kế
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+users
+id PK, email UQ, full_name,
+password_hash, created_at
+
+dishes
+id PK, slug UQ, name,
+normalized_name, thời gian,
+khẩu phần, nguồn, ảnh, giấy
+phép, published
+
+1:N
+1:N
+refresh_sessions
+id PK, jti UQ, user_id FK,
+expires_at, revoked
+
+1:N
+
+prediction_history
+id PK, user_id FK,
+predicted_dish, confidence,
+top3_json, selected_dish,
+1:Ncreated_at
+1:0..1
+
+recipe_steps
+id PK, dish_id FK, position,
+instruction
+
+1:N
+
+recipe_references
+id PK, dish_id FK, position,
+name, url, publisher,
+accessed_at
+
+1:N
+
+Hình 3.5. ERD của chín bảng trong cơ sở dữ liệu Vị Việt.
+
+15
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+prediction_feedback
+id PK, history_id FK UQ,
+user_id FK, selected_dish,
+created_at
+
+recipe_ingredients
+id PK, dish_id FK, position,
+name, quantity, unit
+
+Chương 3. Phân tích và thiết kế
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Foreign key dùng ON DELETE CASCADE ở các bản ghi phụ thuộc. Cặp
+user_id,dish_id trong favorites là duy nhất; history_id trong feedback cũng duy
+nhất để mỗi lịch sử chỉ có tối đa một phản hồi. Migration được version hóa bằng
+Alembic và chạy trước khi API nhận request.
+
+3.8
+
+Thiết kế kho công thức và giấy phép
+
+Catalog được chia thành tám công thức dịch từ nguồn mở và ba mươi công thức
+Vị Việt biên soạn. Nội dung dịch phải có URL phiên bản cố định, attribution, ghi
+chú đã thay đổi và giấy phép CC BY-SA. Nội dung biên soạn cần tối thiểu hai
+reference. Ảnh chỉ chấp nhận Public Domain, CC0, CC BY hoặc CC BY-SA và
+phải có tác giả, URL nguồn, tên/URL giấy phép cùng SHA-256 trong manifest.
+Importer chạy trong transaction, cập nhật theo slug và rollback toàn bộ nếu
+một món không hợp lệ. Trước import thật, SQLite được sao lưu. Serializer chỉ
+trả hasRecipe=true khi bản ghi thỏa toàn bộ điều kiện xuất bản.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+16
+
+Chương 3. Phân tích và thiết kế
+
+3.9
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Thiết kế model nhận diện
+
+Pipeline ở Hình 3.6 bắt đầu bằng kiểm tra MIME, dung lượng và khả năng giải
+mã. Processor chính thức của model thực hiện resize/chuẩn hóa; ứng dụng
+không tự crop theo một quy tắc khác. Cấu hình local cho biết model có input
+384×384, patch 16, 24 encoder, hidden size 1024, 16 attention head và 38 lớp
+đầu ra.
+Ảnh JPEG/PNG
+tối đa 10 MB
+
+Tên món chuẩn
+và công thức
+
+Pillow kiểm tra
+và đổi RGB
+
+Top 3 backend
+Top 1 giao diện
+
+Image processor
+384×384
+
+Linear 38 lớp
++ Softmax
+
+576 patch token
++ CLS token
+
+24 Transformer encoder
+hidden 1024, 16 head
+
+Hình 3.6. Pipeline suy luận của model ViT-L/16.
+
+Sau Softmax, backend trả Top 3 và cờ accepted dựa trên ngưỡng 0,60. Tên
+nhãn được lấy trực tiếp từ model.config.id2label, chuẩn hóa dấu và alias rồi truy
+vấn dishes.normalized_name. Cách này tránh phụ thuộc vào thứ tự lớp viết thủ
+công.
+Giải thuật 3.1. Nhận diện ảnh và ánh xạ công thức
+Đầu vào
+Đầu ra
+
+Ảnh I , model M , ngưỡng τ , cơ sở dữ liệu D.
+Dự đoán Top 1, Top 3 và món được ánh xạ hoặc null.
+
+1
+
+Nếu I không phải JPEG/PNG hoặc vượt giới hạn thì trả lỗi đầu vào.
+
+2
+
+X ← Processor(RGB(I)).
+
+3
+
+P ← Softmax(M (X)).
+
+4
+
+T ← TopK(P, 3).
+
+5
+
+n ← Normalize(T [1].label).
+
+6
+
+d ← FindDish(D, n).
+
+7
+
+Trả T [1], T , d và (T [1].conf idence ≥ τ ).
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+17
+
+4
+Cài đặt và thử nghiệm
+MỤC TIÊU CHƯƠNG
+
+Chương này mô tả môi trường phát triển, cách hiện thực các thành phần
+chính, giao diện ứng dụng và chiến lược kiểm thử.
+
+4.1
+
+Môi trường triển khai
+
+Hệ thống được phát triển và thử nghiệm trên máy Windows build 26300 với CPU
+Intel Core i5-11400H 2,70 GHz và GPU NVIDIA GeForce RTX 3050 Laptop 4 GB.
+Môi trường Python hiện cài PyTorch 2.14.0+cpu nên lần đánh giá trong báo cáo
+chạy trên CPU; loader vẫn tự chọn CUDA ở môi trường có bản PyTorch hỗ trợ.
+Các thành phần phần mềm chính đã được liệt kê ở Bảng 2.1. Android Emulator
+kết nối backend máy chủ qua địa chỉ 10.0.2.2:8000.
+Mã nguồn được tổ chức thành hai package chính: backend/ và mobile/. Model
+local, database có dữ liệu tài khoản, dataset, cache và artifact đánh giá không
+được commit lên Git. Script setup tải model về đúng đường dẫn khi môi trường
+mới chưa có trọng số.
+
+4.2
+
+Cài đặt backend
+
+FastAPI khởi tạo router, mount static media, chạy migration và seed
+38 nhãn trước khi nhận request. Model loader kiểm tra đủ config.json,
+preprocessor_config.json và trọng số trước khi load local. Nếu thiếu, script
+download sử dụng save_pretrained để tạo một bản model hoàn chỉnh. Mã
+nguồn 4.1 minh họa nguyên tắc singleton.
+
+18
+
+Chương 4. Cài đặt và thử nghiệm
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Mã nguồn 4.1. Nạp model một lần cho toàn bộ tiến trình.
+1
+2
+3
+4
+5
+6
+7
+8
+
+def get_model_bundle() ‐> ModelBundle:
+# Load exactly once and reuse the bundle for later requests
+global _bundle
+if _bundle is None:
+with _lock:
+if _bundle is None:
+_bundle = load_model_bundle()
+return _bundle
+
+Hàm nhận diện giải mã ảnh bằng Pillow, kiểm tra JPEG/PNG và giới hạn pixel,
+sau đó dùng processor chính thức của model. Softmax và Top K được thực hiện
+trong torch.inference_mode. Tên lớp lấy từ id2label, không hard-code thứ tự
+nhãn.
+
+4.3
+
+Cơ sở dữ liệu và catalog công thức
+
+SQLAlchemy khai báo chín model quan hệ. Alembic quản lý migration ban đầu,
+metadata giấy phép và metadata xác minh. Importer đọc hai catalog JSON và
+media manifest, kiểm tra schema, URL, nguồn, nguyên liệu, bước nấu, thời gian,
+khẩu phần và ảnh trước khi mở transaction. Cập nhật dựa trên slug nên chạy lại
+không sinh ID món mới hay làm mất liên kết yêu thích.
+Audit hiện xác nhận 38/38 món đã xuất bản, 38 ảnh và metadata đầy đủ.
+Database có 348 dòng nguyên liệu, 205 bước và 85 nguồn tham khảo. Ảnh hiển
+thị được đổi sang WebP và phục vụ tại /media/dishes; dataset train không được
+dùng làm ảnh giao diện.
+
+4.4
+
+Cài đặt ứng dụng Flutter
+
+Điểm vào là mobile/lib/main.dart. Các model Dart ánh xạ JSON API; AppState
+quản lý phiên, catalog, yêu thích và lịch sử; ApiClient chịu trách nhiệm
+JSON, refresh token và retry một lần; AiService gửi multipart. Token được lưu
+trong flutter_secure_storage, còn cache danh mục gần nhất sử dụng shared
+preferences.
+Luồng camera cho phép chụp hoặc chọn từ thư viện, xem preview và gửi ảnh.
+Trong thời gian chờ, thao tác gửi lặp bị khóa. Màn kết quả chỉ hiển thị Top 1,
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+19
+
+Chương 4. Cài đặt và thử nghiệm
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+confidence, nút xem công thức và liên kết phản hồi nhỏ. Nhấn thẻ công thức mở
+trực tiếp món trong recognizedDish, không yêu cầu tìm lại.
+Mã nguồn 4.2. Ghép URL ảnh tương đối với base URL phía client.
+1
+2
+3
+4
+5
+6
+
+Uri resolveMediaUrl(String value) {
+// Keep absolute URLs; resolve backend media paths centrally
+final parsed = Uri.parse(value);
+if (parsed.hasScheme) return parsed;
+return Uri.parse(ApiConfig.baseUrl).resolve(value);
+}
+
+4.5
+
+Giao diện ứng dụng
+
+Hình 4.1 cho thấy màn đăng nhập và trang chủ. Giao diện dùng xanh lá làm màu
+thương hiệu, nền kem, điểm nhấn cam và kiểu chữ hỗ trợ tiếng Việt. Các trạng
+thái loading, rỗng, lỗi mạng và fallback ảnh được xử lý riêng.
+
+Đăng nhập
+
+Trang chủ
+
+Danh mục công thức
+
+Hình 4.1. Các màn hình đăng nhập, trang chủ và danh mục.
+
+Hình 4.2 minh họa luồng nhận diện Phở và khu vực nguồn–bản quyền. Ảnh
+kết quả chỉ hiển thị một dự đoán cao nhất theo định hướng tối giản.
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+20
+
+Chương 4. Cài đặt và thử nghiệm
+
+Chọn ảnh Phở
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Kết quả Top 1
+
+Nguồn và bản quyền
+
+Hình 4.2. Luồng nhận diện và xem công thức có nguồn.
+
+4.6
+
+Chiến lược kiểm thử
+
+Backend có 24 test case bao phủ bảo mật, database, model loader, xử lý ảnh,
+API và luồng MVP. Flutter có 21 test/widget test cho parse model, refresh token,
+optimistic update, màn kết quả, metadata công thức, hồ sơ và điều hướng đăng
+ký. Ngoài tự động, audit dữ liệu kiểm tra 38 món, ảnh, metadata và toàn vẹn
+catalog. APK debug và hai luồng danh mục–chi tiết, nhận diện–công thức được
+dùng để nghiệm thu trên Emulator.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+21
+
+Chương 4. Cài đặt và thử nghiệm
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Bảng 4.1. Nhóm kiểm thử của hệ thống.
+
+Nhóm
+
+Nội dung
+
+Backend
+unit/API
+
+Xác thực, rate limit, ảnh lỗi, CRUD, predict và serializer
+
+Flutter
+
+State, parse JSON, điều hướng, dialog, màn kết quả và
+responsive
+
+Data audit
+
+38 công thức, ảnh, nguồn, thời gian, rollback và
+idempotency
+
+Build
+
+Phân tích tĩnh, test, APK debug và cấu hình Android Studio
+
+Emulator
+
+Đăng nhập, tìm kiếm, camera/thư viện, Top 1 và mở công
+thức
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+22
+
+5
+Kết quả và đánh giá
+MỤC TIÊU CHƯƠNG
+
+Chương này đối chiếu mục tiêu, trình bày audit dữ liệu, đánh giá model trên
+tập Test sạch và phân tích những hạn chế của sản phẩm.
+
+5.1
+
+Mức độ hoàn thành mục tiêu
+
+Ứng dụng đã hoàn thiện luồng Flutter–FastAPI, nhận diện ảnh bằng model 38
+nhãn, tìm kiếm và hiển thị 38 công thức có nguồn. Các chức năng đăng ký,
+đăng nhập, chế độ khách, yêu thích, lịch sử, phản hồi và sửa tên được tích hợp.
+Backend có migration, audit, importer và tài liệu OpenAPI. Như vậy năm nhóm
+mục tiêu sản phẩm ở Chương 1 đã được hiện thực; phạm vi production nhiều
+người dùng vẫn là hướng phát triển.
+
+5.2
+
+Kết quả dữ liệu công thức
+
+Audit xác nhận mỗi món có thời gian sơ chế, nấu, tổng thời gian, khẩu phần, ít
+nhất một nguyên liệu và một bước. Ảnh local giải mã được và metadata khớp
+manifest. Việc tách catalog nguồn mở với catalog biên soạn giúp hiển thị đúng
+nguồn gốc nội dung và phạm vi giấy phép.
+
+5.3
+
+Audit và làm sạch 30VNFoods
+
+Dataset gốc có 25.136 ảnh JPG thuộc 30 lớp: 17.581 Train, 2.515 Validate và
+5.040 Test. Tất cả ảnh đều được Pillow đọc thành công. Audit SHA-256 phát
+hiện 63 nhóm trùng, 40 nhóm đi qua nhiều split và 38 nhóm có cùng ảnh nhưng
+23
+
+Chương 5. Kết quả và đánh giá
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Bảng 5.1. Thống kê kho công thức sau audit.
+
+Thuộc tính
+
+Kết quả
+
+Món đã xuất bản
+
+38/38
+
+Ảnh có metadata đầy đủ
+
+38/38
+
+Nguyên liệu
+
+348
+
+Bước thực hiện
+
+205
+
+Nguồn tham khảo
+
+85
+
+Công thức dịch nguồn mở
+
+8
+
+Công thức biên soạn đối chiếu
+
+30
+
+khác nhãn. Chính sách làm sạch giữ một bản cho nhóm trùng cùng nhãn, ưu
+tiên Test rồi Validate và Train; nhóm mâu thuẫn nhãn bị loại hoàn toàn.
+Manifest sạch còn 25.032 ảnh: 17.515 Train, 2.503 Validate và 5.014 Test như
+Hình 5.1. Dữ liệu raw không bị sửa.
+
+Hình 5.1. Phân bố các split sau khi loại ảnh trùng và mâu thuẫn.
+
+Số ảnh giữa các lớp không hoàn toàn cân bằng. Hình 5.2 cho thấy Bún bò
+Huế, Bánh mì và Bánh xèo có nhiều mẫu hơn một số lớp như Bánh pía hoặc
+Bánh chưng. Vì vậy báo cáo sử dụng thêm macro F1 thay vì chỉ đọc accuracy.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+24
+
+Chương 5. Kết quả và đánh giá
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+25
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Hình 5.2. Số ảnh sạch theo từng lớp trong toàn bộ ba split.
+
+Chương 5. Kết quả và đánh giá
+
+5.4
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Kết quả đánh giá model
+
+Model được chạy trên toàn bộ 5.014 ảnh của manifest Test sạch. Nhãn dataset
+được chuẩn hóa bằng cùng module alias với backend. Một dự đoán chỉ được
+tính đúng khi tên chuẩn Top 1 trùng ground truth. Các dự đoán rơi vào tám lớp
+ngoài phạm vi 30VNFoods vẫn được tính là sai.
+Bảng 5.2. Kết quả đánh giá trên tập Test sạch.
+
+Độ đo
+
+Giá trị
+
+Số ảnh đánh giá
+
+5.014
+
+Số dự đoán đúng
+
+4.690
+
+Accuracy Top 1
+
+93,54%
+
+Macro Precision
+
+94,00%
+
+Macro Recall
+
+93,41%
+
+Macro F1
+
+93,68%
+
+Confidence trung bình
+
+93,30%
+
+Thời gian trung bình/ảnh 1410,0 ms
+P95 thời gian/ảnh
+
+1406,8 ms
+
+Các con số trong Bảng 5.2 là kết quả chạy tại máy thử nghiệm, không phải
+số liệu do model card công bố. Thời gian/ảnh được chia đều theo batch và phụ
+thuộc thiết bị, backend, batch size và trạng thái bộ nhớ.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+26
+
+Chương 5. Kết quả và đánh giá
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+27
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Hình 5.3. F1 theo từng lớp trên tập Test sạch.
+
+Chương 5. Kết quả và đánh giá
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+28
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Hình 5.4. Ma trận nhầm lẫn chuẩn hóa; tám nhãn ngoài dataset được gộp thành một cột.
+
+Chương 5. Kết quả và đánh giá
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Bảng 5.3. Các cặp nhầm lẫn xuất hiện nhiều nhất.
+
+5.5
+
+Nhãn thật
+
+Dự đoán
+
+Số ảnh
+
+Phở
+
+Bún bò Huế
+
+12
+
+Bánh chưng
+
+Bánh tét
+
+10
+
+Bánh canh
+
+Hủ tiếu
+
+9
+
+Bún bò Huế
+
+Phở
+
+9
+
+Bánh bột lọc Bánh bèo
+
+8
+
+Hủ tiếu
+
+Phở
+
+7
+
+Hủ tiếu
+
+Bánh canh
+
+7
+
+Bánh canh
+
+Phở
+
+6
+
+Bánh cuốn
+
+Bánh đúc
+
+6
+
+Bánh khọt
+
+Bánh căn
+
+6
+
+Kết quả kiểm thử phần mềm
+
+Backend test phát sinh hai cảnh báo không làm test thất bại: TestClient
+của Starlette sẽ chuyển sang httpx2, và cấu hình Alembic chưa khai báo
+path_separator. APK build có cảnh báo phiên bản SDK XML giữa Android
+Studio và command-line tools nhưng Gradle vẫn kết thúc với mã thoát 0.
+Audit công thức đã chạy thành công và trả ok=true, 38 món published, 38 ảnh
+và 38 bản ghi metadata hoàn chỉnh. Kiểm thử phần mềm được chạy tuần tự để
+tránh xung đột cache; trạng thái trong bảng được lấy từ log cùng lần nghiệm thu
+báo cáo.
+
+5.6
+
+Bàn luận
+
+Kết quả cần được đọc trong bối cảnh 30VNFoods chỉ có 30/38 nhãn. Accuracy
+và macro F1 đo khả năng nhận diện trên phần giao nhau, không chứng minh
+hiệu năng với Bánh cu đơ, Nem nướng, Bánh mì cay, Cơm cháy, Bò bía, Bánh
+đậu xanh, Bánh đa cua và Bún cá. Những lớp có hình dạng hoặc thành phần
+gần nhau dễ gây nhầm lẫn; ma trận nhầm lẫn giúp xác định cặp cần bổ sung dữ
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+29
+
+Chương 5. Kết quả và đánh giá
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Bảng 5.4. Kết quả kiểm thử và build tại lần nghiệm thu báo cáo.
+
+Hạng mục
+
+Trạng thái
+
+Kết quả
+
+Backend pytest
+
+PASS
+
+24 test, 48 subtest;
+deprecation; 12,24 giây
+
+Flutter analyze
+
+PASS
+
+Không phát hiện issue; 53,4 giây
+
+Flutter test
+
+PASS
+
+21/21 test; khoảng 5 giây
+
+Audit công thức
+
+PASS
+
+38 món, 38 ảnh, metadata đầy đủ, không
+có lỗi
+
+Build APK debug
+
+PASS
+
+Sinh mobile/build/
+
+CHƯA
+THỬ LẠI
+
+Có ảnh nghiệm thu luồng camera, Top 1
+và mở công thức; chưa chạy lại thao tác
+tương tác trong phiên tạo báo cáo
+
+2
+
+cảnh
+
+báo
+
+app/outputs/
+flutter‐apk/
+app‐debug.apk
+
+Android Emulator
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+30
+
+Chương 5. Kết quả và đánh giá
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+liệu.
+Điểm mạnh của hệ thống không chỉ nằm ở model. Sau khi có nhãn, backend
+phải ánh xạ đúng tên có dấu, trả đúng món và không tự tạo công thức khi ánh
+xạ thất bại. Việc lưu Top 3 ở backend nhưng chỉ hiển thị Top 1 giúp giữ dữ liệu
+phục vụ phân tích mà không làm giao diện phức tạp.
+
+5.7
+
+Hạn chế
+
+• Bộ đánh giá không bao phủ tám nhãn model; chưa có tập test độc lập đồng
+nhất cho đủ 38 món.
+• Model ViT-L/16 khoảng 1,21 GB, tốn RAM và có thể chậm khi suy luận
+CPU.
+• Model card cho biết dữ liệu huấn luyện có phần tự thu thập; báo cáo không
+thể audit toàn bộ dữ liệu huấn luyện gốc của tác giả model.
+• SQLite và rate limiter trong bộ nhớ phù hợp demo đơn máy, chưa phù hợp
+nhiều API instance ghi đồng thời.
+• Chưa có deployment công khai, CI/CD hoặc kiểm thử tải dài hạn.
+• Công thức có nguồn đối chiếu nhưng chưa được chuyên gia dinh dưỡng
+hoặc đầu bếp kiểm duyệt.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+31
+
+6
+Kết luận và hướng phát triển
+MỤC TIÊU CHƯƠNG
+
+Chương này tổng kết kết quả, bài học rút ra và các hướng phát triển khả thi
+từ những hạn chế đã phân tích.
+
+6.1
+
+Kết luận
+
+Đồ án đã xây dựng một hệ thống mobile hoàn chỉnh cho khám phá công thức
+và nhận diện món Việt. Ứng dụng Flutter kết nối FastAPI, database SQLite và
+model ViT-L/16; nhãn model được chuẩn hóa rồi ánh xạ tới 38 món có công
+thức, ảnh, nguồn và giấy phép. Ngoài luồng AI, hệ thống hỗ trợ tìm kiếm, lọc, tài
+khoản, yêu thích, lịch sử và phản hồi.
+Đóng góp quan trọng của đồ án là kết nối ba loại dữ liệu vốn tách rời: ảnh
+nhận diện, nhãn model và catalog công thức. Quy trình audit giúp tránh sử dụng
+ảnh train làm ảnh giao diện, tránh công thức không rõ nguồn và tránh tuyên bố
+hiệu năng model dựa trên một mẫu quá nhỏ. Đánh giá đầy đủ được thực hiện
+trên 5.014 ảnh Test sạch thuộc 30 lớp có thể đối chiếu.
+
+6.2
+
+Bài học rút ra
+
+Chất lượng dữ liệu ảnh ảnh hưởng trực tiếp tới độ tin cậy của đánh giá. Nếu
+không loại ảnh trùng qua split, kết quả có thể lạc quan giả tạo. Với dữ liệu công
+thức, có nội dung chưa đủ; mỗi ảnh và công thức còn cần metadata nguồn, giấy
+phép và dấu vết thay đổi. Vì vậy phần audit và importer chiếm vai trò không nhỏ
+hơn việc tích hợp model.
+
+32
+
+Chương 6. Kết luận và hướng phát triển
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Một model mạnh không tự tạo thành sản phẩm tốt. Hệ thống phải xử lý ảnh
+hỏng, model chưa sẵn sàng, mất mạng, token hết hạn, nhãn không ánh xạ được
+và recipe không hợp lệ. Tách UI, service, state, router và repository giúp từng
+trường hợp có thể kiểm thử độc lập. Nếu thực hiện lại, việc xây dựng tiêu chí dữ
+liệu và bộ test độc lập sẽ được ưu tiên ngay từ đầu.
+Trí tuệ nhân tạo trong hệ thống đóng vai trò gợi ý, không phải kết luận tuyệt
+đối. Confidence phải được trình bày minh bạch và người dùng cần có cơ chế
+gửi phản hồi. Tương tự, công cụ AI hỗ trợ phát triển phải được kiểm chứng bằng
+mã nguồn, test và nguồn tham khảo trước khi đưa vào báo cáo.
+
+6.3
+
+Hướng phát triển
+
+• Đủ dữ liệu cho 38 nhãn: xây dựng tập test có giấy phép và quy trình
+gán nhãn cho tám món còn thiếu, từ đó đánh giá đúng toàn bộ phạm vi
+production.
+• Fine-tune có kiểm soát: huấn luyện candidate trên manifest sạch, so sánh
+trên test độc lập và chỉ thay production model khi có cải thiện được chứng
+minh.
+• Tối ưu suy luận: thử nghiệm model nhỏ hơn, quantization, ONNX/TFLite
+hoặc GPU server để giảm thời gian và dung lượng.
+• Hạ tầng production: chuyển sang PostgreSQL, rate limiter dùng kho chia
+sẻ, reverse proxy, HTTPS, log tập trung và monitoring.
+• Vòng phản hồi: tổng hợp nhãn người dùng xác nhận thành hàng đợi kiểm
+duyệt, không đưa thẳng dữ liệu chưa kiểm chứng vào train.
+• Mở rộng nội dung: bổ sung dinh dưỡng, dị ứng và biến thể vùng miền khi
+có nguồn chuyên môn phù hợp.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+33
+
+Tài liệu tham khảo
+[1] Alex Biryukov, Daniel Dinu, Dmitry Khovratovich, and Simon Josefsson.
+Argon2 memory-hard function for password hashing and proof-of-work
+applications. Technical Report RFC 9106, RFC Editor, 2021.
+[2] Lukas Bossard, Matthieu Guillaumin, and Luc Van Gool. Food-101 –
+mining discriminative components with random forests. In European
+Conference on Computer Vision, pages 446–461, 2014.
+[3] Trong-Hop Do, Duc-Duy-Anh Nguyen, Hoang-Quan Dang, and
+Hoang-Nhan Nguyen. 30vnfoods: A dataset for vietnamese foods
+recognition. In 2021 IEEE International Conference on Communication,
+Networks and Satellite, 2021.
+[4] Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer,
+Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby. An
+image is worth 16x16 words: Transformers for image recognition at scale.
+In International Conference on Learning Representations, 2021.
+[5] Flutter Team. Guide to app architecture.
+https://docs.flutter.dev/app‐architecture/guide, 2026. Truy cập ngày
+
+31/10/2026.
+[6] Hugging Face. Transformers documentation.
+https://huggingface.co/docs/transformers/, 2026. Truy cập ngày 31/10/2026.
+[7] Michael Jones, John Bradley, and Nat Sakimura. Json web token (jwt).
+Technical Report RFC 7519, RFC Editor, 2015.
+[8] Adam Paszke, Sam Gross, Francisco Massa, Adam Lerer, James
+Bradbury, Gregory Chanan, Trevor Killeen, Zeming Lin, Natalia
+Gimelshein, Luca Antiga, et al. Pytorch: An imperative style,
+high-performance deep learning library. In Advances in Neural Information
+Processing Systems, volume 32, 2019.
+[9] Sebastián Ramírez. Fastapi documentation. https://fastapi.tiangolo.com/,
+2026. Truy cập ngày 31/10/2026.
+34
+
+TÀI LIỆU THAM KHẢO
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+[10] SQLAlchemy Authors. Sqlalchemy orm documentation.
+https://docs.sqlalchemy.org/en/21/orm/, 2026. Truy cập ngày 31/10/2026.
+[11] SQLite Consortium. About sqlite. https://www.sqlite.org/about.html, 2026.
+Truy cập ngày 31/10/2026.
+[12] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion
+Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is
+all you need. In Advances in Neural Information Processing Systems,
+volume 30, 2017.
+[13] VietTung04. vit-l-16-food-classifier model card. Hugging Face Hub,
+https://huggingface.co/VietTung04/vit‐l‐16‐food‐classifier, 2024. Truy cập
+ngày 31/10/2026.
+[14] Wikibooks contributors. Wikibooks: Copyrights.
+https://en.wikibooks.org/wiki/Wikibooks:Copyrights, 2026. Truy cập ngày
+
+31/10/2026.
+[15] Wikimedia Commons contributors. Commons: Reusing content outside
+wikimedia.
+https://commons.wikimedia.org/wiki/Commons:Reusing_content_outside_Wikimedia,
+
+2026. Truy cập ngày 31/10/2026.
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+35
+
+Phụ lục
+A. Hướng dẫn cài đặt và chạy chương trình
+Từ thư mục gốc dự án trên Windows, thiết lập backend bằng các lệnh sau:
+Mã nguồn 6.1. Thiết lập và chạy backend.
+1
+2
+
+setup_backend.bat
+run_backend.bat
+
+Script tạo môi trường Python, cài dependency và tải model khi chưa có. Sau
+khi API báo /health thành công, mở thư mục gốc bằng Android Studio, chọn
+cấu hình Flutter trỏ tới mobile/lib/main.dart, mở Android Emulator và nhấn
+Shift+F10. Backend không được tự khởi động từ Gradle.
+Kiểm thử thủ công API:
+Mã nguồn 6.2. Kiểm tra health và nhận diện.
+1
+2
+
+curl http://127.0.0.1:8000/health
+curl ‐F "image=@food.jpg" http://127.0.0.1:8000/predict
+
+B. Danh sách API
+Bảng 6.1: Các endpoint chính của backend.
+Method
+
+Endpoint
+
+Mục đích
+
+GET
+
+/health
+
+Kiểm tra API sẵn sàng
+
+POST
+
+/auth/register
+
+Tạo tài khoản
+
+POST
+
+/auth/login
+
+Đăng nhập
+
+POST
+
+/auth/refresh
+
+Xoay vòng token
+
+POST
+
+/auth/logout
+
+Thu hồi refresh session
+
+GET/PATCH
+
+/users/me
+
+Đọc hoặc đổi họ tên
+
+36
+
+Phụ lục
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Method
+
+Endpoint
+
+Mục đích
+
+GET
+
+/dishes
+
+Tìm kiếm, lọc và phân trang
+món
+
+GET
+
+/dishes/{slug}
+
+Chi tiết món và công thức
+
+GET/POST
+
+/favorites
+
+Đọc hoặc thêm yêu thích
+
+DELETE
+
+/favorites/{slug}
+
+Bỏ yêu thích
+
+GET/DELETE
+
+/history
+
+Đọc hoặc xóa lịch sử
+
+DELETE
+
+/history/{id}
+
+Xóa một lịch sử
+
+POST
+
+/predictions/{id}/feedback
+
+Gửi nhãn đúng
+
+POST
+
+/predict
+
+Nhận diện ảnh món ăn
+
+C. Danh sách 38 món
+1. Bánh cuốn
+2. Mì Quảng
+3. Bánh tráng nướng
+4. Gỏi cuốn
+5. Bánh giò
+6. Bún mắm
+7. Canh chua
+8. Nem chua
+9. Bún riêu
+10. Bánh đúc
+11. Bánh pía
+12. Bánh canh
+13. Bánh khọt
+14. Bánh bột lọc
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+37
+
+Phụ lục
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+15. Bánh căn
+16. Bún thịt nướng
+17. Bánh chưng
+18. Bún đậu mắm tôm
+19. Bánh bèo
+20. Bánh tét
+21. Cao lầu
+22. Cháo lòng
+23. Cá kho tộ
+24. Bún bò Huế
+25. Phở
+26. Xôi xéo
+27. Bánh mì
+28. Bánh xèo
+29. Cơm tấm
+30. Hủ tiếu
+31. Bánh cu đơ
+32. Nem nướng
+33. Bánh mì cay
+34. Cơm cháy
+35. Bò bía
+36. Bánh đậu xanh
+37. Bánh đa cua
+38. Bún cá
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+38
+
+Phụ lục
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+D. Độ đo chi tiết theo lớp
+Bảng 6.2: Độ đo theo từng lớp trên tập Test sạch.
+Lớp
+
+Support Precision
+
+Recall
+
+F1
+
+Bánh bèo
+
+128
+
+92,42%
+
+95,31%
+
+93,85%
+
+Bánh bột lọc
+
+143
+
+94,81%
+
+89,51%
+
+92,09%
+
+Bánh canh
+
+191
+
+86,63%
+
+84,82%
+
+85,71%
+
+Bánh chưng
+
+100
+
+90,62%
+
+87,00%
+
+88,78%
+
+Bánh cuốn
+
+226
+
+96,30%
+
+92,04%
+
+94,12%
+
+Bánh căn
+
+149
+
+93,84%
+
+91,95%
+
+92,88%
+
+Bánh giò
+
+128
+
+95,35%
+
+96,09%
+
+95,72%
+
+Bánh khọt
+
+167
+
+95,12%
+
+93,41%
+
+94,26%
+
+Bánh mì
+
+268
+
+98,88%
+
+98,51%
+
+98,69%
+
+Bánh pía
+
+89
+
+91,40%
+
+95,51%
+
+93,41%
+
+Bánh tráng nướng
+
+159
+
+94,48%
+
+96,86%
+
+95,65%
+
+Bánh tét
+
+135
+
+91,30%
+
+93,33%
+
+92,31%
+
+Bánh xèo
+
+235
+
+97,39%
+
+95,32%
+
+96,34%
+
+Bánh đúc
+
+130
+
+89,47%
+
+91,54%
+
+90,49%
+
+Bún bò Huế
+
+305
+
+88,36%
+
+92,13%
+
+90,21%
+
+Bún mắm
+
+155
+
+96,53%
+
+89,68%
+
+92,98%
+
+Bún riêu
+
+227
+
+93,75%
+
+92,51%
+
+93,13%
+
+Bún thịt nướng
+
+150
+
+96,55%
+
+93,33%
+
+94,92%
+
+Bún đậu mắm tôm
+
+184
+
+100,00% 100,00% 100,00%
+
+Canh chua
+
+165
+
+93,83%
+
+92,12%
+
+92,97%
+
+Cao lầu
+
+124
+
+95,93%
+
+95,16%
+
+95,55%
+
+Cháo lòng
+
+215
+
+99,06%
+
+98,14%
+
+98,60%
+
+Cá kho tộ
+
+136
+
+97,78%
+
+97,06%
+
+97,42%
+
+Cơm tấm
+
+189
+
+97,92%
+
+99,47%
+
+98,69%
+
+Gỏi cuốn
+
+171
+
+96,57%
+
+98,83%
+
+97,69%
+
+Hủ tiếu
+
+196
+
+86,84%
+
+84,18%
+
+85,49%
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+39
+
+Phụ lục
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Lớp
+
+Support Precision
+
+Recall
+
+F1
+
+Mì Quảng
+
+173
+
+93,96%
+
+98,84%
+
+96,34%
+
+Nem chua
+
+109
+
+92,08%
+
+85,32%
+
+88,57%
+
+Phở
+
+162
+
+84,66%
+
+85,19%
+
+84,92%
+
+Xôi xéo
+
+105
+
+98,11%
+
+99,05%
+
+98,58%
+
+E. Dữ liệu, giấy phép và quyền riêng tư
+Model được công bố theo Apache-2.0. Dataset 30VNFoods được dùng để audit
+và đánh giá, không dùng làm ảnh UI. Tám công thức chuyển thể từ Wikibooks
+phải giữ attribution, URL phiên bản, thông báo chỉnh sửa và CC BY-SA 4.0. Ba
+mươi công thức còn lại được viết mới và dẫn tối thiểu hai nguồn. Mỗi ảnh giao
+diện có giấy phép riêng trong media manifest. Ảnh người dùng gửi nhận diện
+không được lưu; database chỉ ghi nhãn, độ tin cậy, Top 3 và thời điểm khi người
+dùng đã đăng nhập.
+
+F. Tuyên bố sử dụng công cụ AI hỗ trợ
+Công cụ AI được dùng để hỗ trợ kiểm tra cấu trúc dự án, gợi ý nội dung tài liệu,
+phát hiện lỗi và tạo bản nháp sơ đồ. Người thực hiện chịu trách nhiệm đối chiếu
+với mã nguồn, chạy test, kiểm tra số liệu, rà tài liệu tham khảo và chỉnh sửa bản
+cuối. Không dùng AI để tạo công thức giả, kết quả đánh giá giả hoặc thông tin
+cá nhân.
+
+G. Bảng tự kiểm trước khi nộp
+Đã thay toàn bộ placeholder trên trang bìa.
+Backend và ứng dụng chạy được trên môi trường bảo vệ.
+Mọi con số trong báo cáo có tệp kết quả hoặc truy vấn kiểm chứng.
+Sơ đồ ERD khớp migration và model database hiện tại.
+Mọi hình, bảng và thuật toán có chú thích, nhãn và được dẫn trong bài.
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+40
+
+Phụ lục
+
+BÁO CÁO ĐỒ ÁN TRÍ TUỆ NHÂN TẠO
+
+Tất cả tài liệu trong refs.bib đều được trích dẫn.
+Không còn nội dung hướng dẫn của template hoặc tham chiếu lỗi.
+Đã kiểm tra PDF render, tiếng Việt, mục lục và số trang.
+Đã khai báo việc dùng công cụ AI hỗ trợ.
+
+H. Nhận xét của giảng viên hướng dẫn
+...........................................................................
+...........................................................................
+...........................................................................
+...........................................................................
+...........................................................................
+...........................................................................
+Đà Nẵng, ngày … tháng … năm …
+Điểm số
+Giảng viên hướng dẫn
+Bằng số: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+TS. Đỗ Phúc Hảo
+Bằng chữ: . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+NGUYỄN HỮU PHÚC ꞏ 2351220005
+
+41
+
+

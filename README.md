@@ -89,9 +89,6 @@ khi backend xác nhận đủ nội dung, nguồn, giấy phép và metadata ả
 
 - người muốn tìm hiểu và tự nấu món Việt;
 - người cần nhận diện nhanh một món ăn từ ảnh;
-- giảng viên/người đánh giá muốn kiểm tra một hệ thống Flutter–AI hoàn chỉnh;
-- lập trình viên muốn tham khảo cách tích hợp Flutter, FastAPI và ViT.
-
 ### Phạm vi hiện tại
 
 - ứng dụng chạy local trên Android Emulator, Android, web và desktop Flutter;

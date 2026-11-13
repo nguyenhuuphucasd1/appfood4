@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=1cm,y=1cm, font=\scriptsize]
+  \node[clsbox, minimum width=2.5cm] (client) at (0,0) {Flutter};
+  \node[clsbox, minimum width=2.5cm] (api) at (4.4,0) {FastAPI};
+  \node[clsbox, minimum width=2.5cm] (vit) at (8.8,0) {ViT-L/16};
+  \node[clsbox, minimum width=2.5cm] (db) at (13.2,0) {SQLite};
+  \foreach \x in {0,4.4,8.8,13.2} {
+    \draw[dashed, gray500, line width=.55pt] (\x,-0.6) -- (\x,-7.25);
+  }
+
+  \draw[flowarr] (0,-1.0) -- node[above]{POST /predict + ảnh} (4.4,-1.0);
+  \draw[flowarr] (4.4,-1.85) -- node[above]{processor(RGB 384)} (8.8,-1.85);
+  \draw[dataarr] (8.8,-2.70) -- node[above]{logits, Softmax, Top 3} (4.4,-2.70);
+  \draw[flowarr] (4.4,-3.55) -- node[above]{tìm normalized\_name} (13.2,-3.55);
+  \draw[dataarr] (13.2,-4.40) -- node[above]{recognizedDish + recipe} (4.4,-4.40);
+  \draw[flowarr] (4.4,-5.25) -- node[above]{nếu đăng nhập: lưu lịch sử} (13.2,-5.25);
+  \draw[dataarr] (4.4,-6.10) -- node[above]{prediction + Top 3 + món} (0,-6.10);
+  \draw[flowarr] (0,-6.72) -- ++(10mm,0) |- node[pos=.25, above]{mở công thức Top 1} (0,-7.18);
+  \node[note, text width=5.8cm] at (7.8,-7.15)
+    {Ảnh upload chỉ tồn tại trong bộ nhớ request, không ghi vào database hoặc ổ đĩa.};
+\end{tikzpicture}

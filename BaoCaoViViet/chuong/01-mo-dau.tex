@@ -1,0 +1,81 @@
+\chapter{Mở đầu}
+\label{ch:modau}
+
+\begin{muctieu}
+Chương này trình bày bối cảnh, vấn đề cần giải quyết, mục tiêu đo lường được,
+phạm vi và bố cục của đồ án Vị Việt.
+\end{muctieu}
+
+\section{Lý do chọn đề tài}
+
+Ẩm thực Việt Nam có số lượng món lớn, tên gọi và biến thể khác nhau theo vùng
+miền. Khi bắt gặp một món ăn qua ảnh, người dùng có thể không biết tên chính
+xác để tìm kiếm. Ngược lại, kết quả tìm kiếm trên Internet thường phân tán,
+khó phân biệt nội dung có nguồn với nội dung được sao chép hoặc tạo tự động.
+Hai khó khăn này tạo ra nhu cầu về một hệ thống vừa nhận diện món qua ảnh,
+vừa dẫn người dùng đến công thức có thể truy nguyên.
+
+Nhận diện món ăn là một bài toán phân loại ảnh nhiều lớp. Food-101 cho thấy
+đây là bài toán khó do sự khác biệt lớn về cách trình bày, ánh sáng và nền
+ảnh, đồng thời nhiều món có hình thức gần giống nhau
+\cite{bossard2014food101}. Với món Việt, 30VNFoods cung cấp 25.136 ảnh thuộc
+30 lớp và là nguồn phù hợp để đánh giá model trong phạm vi đề tài
+\cite{do2021_30vnfoods}. Đồ án chọn cách khai thác mô hình ViT tiền huấn luyện
+thay vì huấn luyện mạng mới từ đầu, nhờ đó tập trung nguồn lực vào tích hợp
+hệ thống, chất lượng dữ liệu công thức và trải nghiệm mobile.
+
+Sản phẩm được đặt tên \term{Vị Việt}, hướng đến trải nghiệm tối giản: người
+dùng có thể tìm món bằng chữ hoặc chụp/chọn ảnh, xem kết quả Top~1 kèm độ tin
+cậy, rồi mở đúng công thức tương ứng. Công thức và ảnh chỉ được xuất bản khi
+có metadata nguồn và giấy phép hợp lệ.
+
+\section{Mục tiêu của đồ án}
+
+Đồ án hướng tới các mục tiêu cụ thể sau:
+\begin{itemize}
+  \item Xây dựng ứng dụng Flutter chạy trên Android, hỗ trợ chế độ khách,
+        đăng ký, đăng nhập và quản lý phiên.
+  \item Tích hợp model ViT-L/16 gồm 38 nhãn món Việt; hỗ trợ ảnh JPEG/PNG,
+        trả tên món, độ tin cậy và dữ liệu món được ánh xạ từ database.
+  \item Cung cấp danh mục 38 món có ảnh, nguyên liệu, bước nấu, thời gian,
+        khẩu phần, nguồn công thức và metadata giấy phép.
+  \item Hỗ trợ tìm kiếm, lọc, yêu thích, lịch sử nhận diện, phản hồi nhãn
+        đúng và chỉnh sửa tên tài khoản.
+  \item Xây dựng backend FastAPI có kiểm tra đầu vào, xác thực JWT, migration,
+        audit dữ liệu và tài liệu OpenAPI.
+  \item Đánh giá model trên toàn bộ 5.014 ảnh thuộc tập Test sạch của 30 lớp
+        giao nhau giữa 30VNFoods và model; báo cáo trung thực giới hạn tám
+        nhãn chưa được bộ dữ liệu này bao phủ.
+\end{itemize}
+
+\section{Đối tượng sử dụng}
+
+Đối tượng chính là người quan tâm tới món ăn Việt và muốn khám phá công thức
+bằng tên món hoặc hình ảnh. Khách có thể xem danh mục, tìm kiếm và nhận diện.
+Người dùng đăng nhập có thêm khả năng lưu yêu thích, xem/xóa lịch sử và gửi
+phản hồi khi kết quả chưa đúng. Đối tượng kỹ thuật gồm người quản lý dữ liệu
+công thức và lập trình viên cần audit, import hoặc triển khai lại hệ thống.
+
+\section{Phạm vi và giới hạn}
+
+Phạm vi nhận diện được giới hạn ở 38 nhãn trong cấu hình model. Giao diện chỉ
+hiển thị Top~1 để tối giản; backend vẫn lưu Top~3 cho lịch sử và đánh giá. Ảnh
+người dùng chỉ được giữ trong bộ nhớ trong lúc suy luận, không được ghi vào ổ
+đĩa hoặc database. Đồ án chưa huấn luyện lại model production, chưa triển khai
+backend công khai và chưa tối ưu cho nhiều API instance. SQLite phù hợp với
+demo đơn máy nhưng không thay thế hệ quản trị cơ sở dữ liệu cho production.
+
+Dataset 30VNFoods là dữ liệu ảnh phục vụ audit và đánh giá, không phải database
+công thức. Tám nhãn model không xuất hiện trong dataset nên các độ đo trên tập
+Test chỉ phản ánh 30 lớp giao nhau. Công thức được biên soạn hoặc dịch từ nguồn
+có thể truy nguyên, nhưng không được tuyên bố là nội dung đã qua chuyên gia ẩm
+thực kiểm duyệt.
+
+\section{Bố cục báo cáo}
+
+Phần còn lại của báo cáo được tổ chức như sau. Chương~\ref{ch:coso} trình
+bày cơ sở lý thuyết và công nghệ. Chương~\ref{ch:thietke} phân tích yêu cầu
+và thiết kế hệ thống. Chương~\ref{ch:caidat} mô tả quá trình cài đặt, dữ liệu,
+giao diện và kiểm thử. Chương~\ref{ch:ketqua} trình bày kết quả đánh giá,
+bàn luận và hạn chế. Chương~\ref{ch:ketluan} tổng kết và đề xuất hướng phát
+triển.

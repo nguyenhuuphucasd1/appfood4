@@ -1,0 +1,61 @@
+\chapter{Kết luận và hướng phát triển}
+\label{ch:ketluan}
+
+\begin{muctieu}
+Chương này tổng kết kết quả, bài học rút ra và các hướng phát triển khả thi
+từ những hạn chế đã phân tích.
+\end{muctieu}
+
+\section{Kết luận}
+
+Đồ án đã xây dựng một hệ thống mobile hoàn chỉnh cho khám phá công thức và
+nhận diện món Việt. Ứng dụng Flutter kết nối FastAPI, database SQLite và model
+ViT-L/16; nhãn model được chuẩn hóa rồi ánh xạ tới 38 món có công thức, ảnh,
+nguồn và giấy phép. Ngoài luồng AI, hệ thống hỗ trợ tìm kiếm, lọc, tài khoản,
+yêu thích, lịch sử và phản hồi.
+
+Đóng góp quan trọng của đồ án là kết nối ba loại dữ liệu vốn tách rời: ảnh
+nhận diện, nhãn model và catalog công thức. Quy trình audit giúp tránh sử
+dụng ảnh train làm ảnh giao diện, tránh công thức không rõ nguồn và tránh
+tuyên bố hiệu năng model dựa trên một mẫu quá nhỏ. Đánh giá đầy đủ được thực
+hiện trên 5.014 ảnh Test sạch thuộc 30 lớp có thể đối chiếu.
+
+\section{Bài học rút ra}
+
+Chất lượng dữ liệu ảnh ảnh hưởng trực tiếp tới độ tin cậy của đánh giá. Nếu
+không loại ảnh trùng qua split, kết quả có thể lạc quan giả tạo. Với dữ liệu
+công thức, có nội dung chưa đủ; mỗi ảnh và công thức còn cần metadata nguồn,
+giấy phép và dấu vết thay đổi. Vì vậy phần audit và importer chiếm vai trò
+không nhỏ hơn việc tích hợp model.
+
+\begin{samepage}
+Một model mạnh không tự tạo thành sản phẩm tốt. Hệ thống phải xử lý ảnh hỏng,
+model chưa sẵn sàng, mất mạng, token hết hạn, nhãn không ánh xạ được và recipe
+không hợp lệ. Tách UI, service, state, router và repository giúp từng trường
+hợp có thể kiểm thử độc lập. Nếu thực hiện lại, việc xây dựng tiêu chí dữ liệu
+và bộ test độc lập sẽ được ưu tiên ngay từ đầu.
+\end{samepage}
+
+Trí tuệ nhân tạo trong hệ thống đóng vai trò gợi ý, không phải kết luận tuyệt
+đối. Confidence phải được trình bày minh bạch và người dùng cần có cơ chế gửi
+phản hồi. Tương tự, công cụ AI hỗ trợ phát triển phải được kiểm chứng bằng mã
+nguồn, test và nguồn tham khảo trước khi đưa vào báo cáo.
+
+\section{Hướng phát triển}
+
+\begin{itemize}
+  \item \textbf{Đủ dữ liệu cho 38 nhãn:} xây dựng tập test có giấy phép và
+        quy trình gán nhãn cho tám món còn thiếu, từ đó đánh giá đúng toàn bộ
+        phạm vi production.
+  \item \textbf{Fine-tune có kiểm soát:} huấn luyện candidate trên manifest
+        sạch, so sánh trên test độc lập và chỉ thay production model khi có
+        cải thiện được chứng minh.
+  \item \textbf{Tối ưu suy luận:} thử nghiệm model nhỏ hơn, quantization,
+        ONNX/TFLite hoặc GPU server để giảm thời gian và dung lượng.
+  \item \textbf{Hạ tầng production:} chuyển sang PostgreSQL, rate limiter
+        dùng kho chia sẻ, reverse proxy, HTTPS, log tập trung và monitoring.
+  \item \textbf{Vòng phản hồi:} tổng hợp nhãn người dùng xác nhận thành hàng
+        đợi kiểm duyệt, không đưa thẳng dữ liệu chưa kiểm chứng vào train.
+  \item \textbf{Mở rộng nội dung:} bổ sung dinh dưỡng, dị ứng và biến thể
+        vùng miền khi có nguồn chuyên môn phù hợp.
+\end{itemize}

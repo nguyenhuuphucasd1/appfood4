@@ -1,0 +1,29 @@
+\begin{tikzpicture}[node distance=10mm and 17mm,
+  entity/.style={rectangle, rounded corners=2pt, draw=daunavy, fill=white,
+    text width=4.45cm, minimum height=14mm, align=left, inner sep=5pt,
+    font=\scriptsize, soft},
+  rel/.style={-{Stealth[length=2mm]}, line width=.75pt, color=daumaroon},
+  card/.style={font=\scriptsize\bfseries, fill=white, inner sep=1.5pt,
+    text=daumaroon}]
+  \node[entity] (users) {\textbf{users}\\\underline{id PK}, email UQ, full\_name, password\_hash, created\_at};
+  \node[entity, below=of users] (sessions) {\textbf{refresh\_sessions}\\\underline{id PK}, jti UQ, user\_id FK, expires\_at, revoked};
+  \node[entity, right=26mm of users] (favorites) {\textbf{favorites}\\\underline{id PK}, user\_id FK, dish\_id FK, created\_at\\UQ(user\_id,dish\_id)};
+  \node[entity, right=26mm of favorites] (dishes) {\textbf{dishes}\\\underline{id PK}, slug UQ, name, normalized\_name, thời gian, khẩu phần, nguồn, ảnh, giấy phép, published};
+
+  \node[entity, below=of favorites] (history) {\textbf{prediction\_history}\\\underline{id PK}, user\_id FK, predicted\_dish, confidence, top3\_json, selected\_dish, created\_at};
+  \node[entity, below=of history] (feedback) {\textbf{prediction\_feedback}\\\underline{id PK}, history\_id FK UQ, user\_id FK, selected\_dish, created\_at};
+
+  \node[entity, below=of dishes] (ingredients) {\textbf{recipe\_ingredients}\\\underline{id PK}, dish\_id FK, position, name, quantity, unit};
+  \node[entity, below=of ingredients] (steps) {\textbf{recipe\_steps}\\\underline{id PK}, dish\_id FK, position, instruction};
+  \node[entity, below=of steps] (refs) {\textbf{recipe\_references}\\\underline{id PK}, dish\_id FK, position, name, url, publisher, accessed\_at};
+
+  \draw[rel] (users) -- node[card, left]{1:N} (sessions);
+  \draw[rel] (users) -- node[card, above]{1:N} (favorites);
+  \draw[rel] (dishes) -- node[card, above]{1:N} (favorites);
+  \draw[rel] (users.east) -- ++(7mm,0) |- node[card, pos=.78, above]{1:N} (history.west);
+  \draw[rel] (history) -- node[card, left]{1:0..1} (feedback);
+  \draw[rel] (users.south) -- ++(0,-7mm) -| node[card, pos=.74, below]{1:N} (feedback.west);
+  \draw[rel] (dishes) -- node[card, right]{1:N} (ingredients);
+  \draw[rel] (dishes.east) -- ++(7mm,0) |- node[card, pos=.76, right]{1:N} (steps.east);
+  \draw[rel] (dishes.east) -- ++(13mm,0) |- node[card, pos=.83, right]{1:N} (refs.east);
+\end{tikzpicture}

@@ -1,0 +1,17 @@
+\begin{tikzpicture}[node distance=10mm and 12mm]
+  \node[io, minimum width=3.25cm] (image) {Ảnh JPEG/PNG\\tối đa 10 MB};
+  \node[process, right=of image, minimum width=3.25cm] (decode) {Pillow kiểm tra\\và đổi RGB};
+  \node[process, right=of decode, minimum width=3.25cm] (processor) {Image processor\\384$\times$384};
+  \node[process, right=of processor, minimum width=3.25cm] (patch) {576 patch token\\+ CLS token};
+  \node[process, below=of patch, minimum width=3.25cm] (encoder) {24 Transformer encoder\\hidden 1024, 16 head};
+  \node[process, left=of encoder, minimum width=3.25cm] (softmax) {Linear 38 lớp\\+ Softmax};
+  \node[process, left=of softmax, minimum width=3.25cm] (topk) {Top 3 backend\\Top 1 giao diện};
+  \node[startstop, left=of topk, minimum width=3.25cm] (dish) {Tên món chuẩn\\và công thức};
+  \draw[flowarr] (image) -- (decode);
+  \draw[flowarr] (decode) -- (processor);
+  \draw[flowarr] (processor) -- (patch);
+  \draw[flowarr] (patch) -- (encoder);
+  \draw[flowarr] (encoder) -- (softmax);
+  \draw[flowarr] (softmax) -- (topk);
+  \draw[flowarr] (topk) -- (dish);
+\end{tikzpicture}

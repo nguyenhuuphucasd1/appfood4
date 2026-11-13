@@ -1,0 +1,19 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Sơ đồ Use Case tổng thể của Vị Việt.}}{9}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Activity Diagram của luồng nhận diện và mở công thức.}}{11}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Kiến trúc tổng thể Flutter--FastAPI--SQLite--ViT.}}{12}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Sequence Diagram cho endpoint {\normalfont \ttfamily \color {daumaroon}POST /predict}.}}{13}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces ERD của chín bảng trong cơ sở dữ liệu Vị Việt.}}{15}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Pipeline suy luận của model ViT-L/16.}}{17}{figure.caption.16}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Các màn hình đăng nhập, trang chủ và danh mục.}}{20}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Luồng nhận diện và xem công thức có nguồn.}}{21}{figure.caption.18}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Phân bố các split sau khi loại ảnh trùng và mâu thuẫn.}}{24}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Số ảnh sạch theo từng lớp trong toàn bộ ba split.}}{25}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces F1 theo từng lớp trên tập Test sạch.}}{27}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \xpg@aux {}{vietnamese}\ignorespaces Ma trận nhầm lẫn chuẩn hóa; tám nhãn ngoài dataset được gộp thành một cột.}}{28}{figure.5.4}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

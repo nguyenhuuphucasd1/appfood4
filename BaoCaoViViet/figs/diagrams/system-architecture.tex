@@ -1,0 +1,32 @@
+\begin{tikzpicture}[node distance=12mm and 16mm]
+  \node[objbox, minimum width=3.0cm, minimum height=12mm] (user)
+    {Người dùng\\thiết bị Android};
+  \node[clsbox, right=of user, minimum width=4.1cm, minimum height=12mm] (flutter)
+    {Ứng dụng Flutter\\UI, AppState, services};
+  \node[clsbox, right=of flutter, minimum width=4.1cm, minimum height=12mm] (api)
+    {FastAPI backend\\router, validation, auth};
+
+  \node[objbox, below=of flutter, xshift=-37mm,
+        minimum width=4.0cm, minimum height=12mm] (media)
+    {Dữ liệu công thức\\catalog + 38 ảnh WebP};
+  \node[objbox, right=of media, minimum width=4.0cm,
+        minimum height=12mm] (db)
+    {SQLite/SQLAlchemy\\9 bảng nghiệp vụ};
+  \node[objbox, right=of db, minimum width=4.0cm,
+        minimum height=12mm] (model)
+    {Model ViT-L/16 local\\processor + 38 nhãn};
+
+  \node[draw=gray300, rounded corners=5pt, inner sep=5mm,
+        fit=(flutter)(api), label={[font=\small\bfseries,
+        text=daumaroon]above:Tầng ứng dụng và API}] {};
+  \node[draw=gray300, rounded corners=5pt, inner sep=5mm,
+        fit=(media)(model), label={[font=\small\bfseries,
+        text=daunavy]below:Tầng dữ liệu và mô hình}] {};
+
+  \draw[dataarr, <->] (user) -- node[above, font=\scriptsize]{thao tác} (flutter);
+  \draw[flowarr, <->] (flutter) -- node[above, font=\scriptsize]{HTTP/JSON, multipart} (api);
+  \draw[dataarr, <->] (api.south) -- ++(0,-6mm) -| (media.north);
+  \draw[dataarr, <->] (api.south) -- ++(0,-9mm) -| (db.north);
+  \draw[dataarr, <->] (api.south) -- ++(0,-12mm) -| (model.north);
+  \draw[dataarr, dashed] (model) -- node[above, font=\scriptsize]{nhãn chuẩn hóa} (db);
+\end{tikzpicture}

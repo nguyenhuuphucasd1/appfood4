@@ -1,0 +1,129 @@
+\chapter{Cơ sở lý thuyết và công nghệ}
+\label{ch:coso}
+
+\begin{muctieu}
+Chương này tóm lược những khái niệm trực tiếp được sử dụng trong hệ thống:
+phân loại ảnh, Transformer, Vision Transformer, các độ đo đánh giá và nền
+tảng phần mềm triển khai.
+\end{muctieu}
+
+\section{Bài toán phân loại ảnh nhiều lớp}
+
+Với ảnh đầu vào $x$ và tập nhãn hữu hạn $\mathcal{Y}=\{1,\ldots,K\}$, bộ
+phân loại học hàm $f:x\mapsto y$ để chọn một nhãn $y\in\mathcal{Y}$. Trong
+đồ án, $K=38$ và mỗi nhãn biểu diễn một món ăn. Model sinh vector điểm thô
+$\mathbf{z}\in\mathbb{R}^{K}$. Xác suất lớp $k$ được tính bằng Softmax:
+\begin{equation}
+p(y=k\mid x)=\frac{\exp(z_k)}{\sum_{j=1}^{K}\exp(z_j)}.
+\label{eq:softmax}
+\end{equation}
+Nhãn có xác suất lớn nhất là Top~1; ba nhãn lớn nhất tạo thành Top~3. Xác
+suất cao không đồng nghĩa chắc chắn tuyệt đối, vì model vẫn có thể tự tin ở
+ảnh ngoài phân phối hoặc các món có hình thức gần nhau.
+
+\section{Transformer và cơ chế tự chú ý}
+
+Transformer thay thế xử lý tuần tự bằng cơ chế self-attention, cho phép mỗi
+token tổng hợp thông tin từ các token khác \cite{vaswani2017attention}. Với
+ma trận truy vấn $Q$, khóa $K$ và giá trị $V$, scaled dot-product attention
+được tính theo:
+\begin{equation}
+\operatorname{Attention}(Q,K,V)=
+\operatorname{softmax}\left(\frac{QK^{\mathsf T}}{\sqrt{d_k}}\right)V,
+\label{eq:attention}
+\end{equation}
+trong đó $d_k$ là số chiều của vector khóa. Multi-head attention thực hiện
+nhiều phép attention song song để học các quan hệ khác nhau.
+
+\section{Vision Transformer}
+
+Vision Transformer (ViT) chia ảnh thành các patch không chồng lấn, biến mỗi
+patch thành một token, thêm positional embedding và token phân lớp
+\cite{dosovitskiy2021vit}. Ảnh 384$\times$384 với patch 16$\times$16 tạo
+ra $24\times24=576$ patch. Chuỗi 576 token ảnh cùng token phân lớp đi qua 24
+Transformer encoder của cấu hình ViT-L/16. Vector ở token phân lớp được đưa
+vào lớp tuyến tính để sinh logits cho 38 món.
+
+ViT tận dụng tốt học chuyển giao khi được tiền huấn luyện trên dữ liệu lớn.
+Đồ án dùng model \code{VietTung04/vit-l-16-food-classifier}, một phiên bản
+ViT-L/16 đã được fine-tune cho món Việt và công bố theo giấy phép Apache-2.0
+\cite{vietTungModel}. Model được tải một lần, lưu local và chạy ở chế độ
+\code{eval} kết hợp \code{torch.inference\_mode}.
+
+\section{Các độ đo đánh giá}
+
+Với mỗi lớp, $TP$, $FP$ và $FN$ lần lượt là số dự đoán đúng, dương tính giả
+và âm tính giả. Các độ đo được tính theo:
+\begin{align}
+\mathrm{Accuracy} &= \frac{\text{số dự đoán đúng}}{\text{tổng số mẫu}},\\
+\mathrm{Precision} &= \frac{TP}{TP+FP},\\
+\mathrm{Recall} &= \frac{TP}{TP+FN},\\
+F_1 &= \frac{2\,\mathrm{Precision}\,\mathrm{Recall}}
+{\mathrm{Precision}+\mathrm{Recall}}.
+\end{align}
+Macro average là trung bình không trọng số của 30 lớp đánh giá, nhờ đó mỗi
+lớp có đóng góp ngang nhau dù số ảnh khác nhau. Ma trận nhầm lẫn cho biết các
+cặp lớp model thường dự đoán lẫn nhau.
+
+\section{Kiến trúc client--server và REST API}
+
+Ứng dụng Flutter đóng vai trò client, còn FastAPI cung cấp tài nguyên qua
+HTTP/JSON và nhận ảnh dưới dạng multipart. FastAPI dựa trên chuẩn OpenAPI và
+tự sinh Swagger UI, thuận tiện cho kiểm thử contract \cite{fastapiDocs}.
+Flutter khuyến nghị tách UI, trạng thái, repository và service để giảm phụ
+thuộc và tăng khả năng kiểm thử \cite{flutterArchitecture}. Dự án hiện dùng
+screen/widget ở lớp UI, \code{AppState} cho trạng thái và \code{ApiClient}
+cùng \code{AiService} cho lớp dữ liệu.
+
+\section{Lưu trữ và bảo mật}
+
+SQLite là database nhúng, serverless, giao dịch và lưu toàn bộ dữ liệu trong
+một tệp \cite{sqliteAbout}. SQLAlchemy ánh xạ lớp Python sang bảng quan hệ,
+quản lý session, transaction và relationship \cite{sqlalchemyDocs}. Mật khẩu
+được băm bằng Argon2, một hàm memory-hard được mô tả trong RFC~9106
+\cite{rfc9106}. Access token và refresh token tuân theo cấu trúc JWT của
+RFC~7519 \cite{rfc7519}; refresh token còn có phiên trong database để hỗ trợ
+xoay vòng và thu hồi.
+
+\section{Công cụ và thư viện}
+
+\begin{table}[htbp]
+\centering
+\caption{Các thành phần chính của hệ thống.}
+\label{tab:congcu}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\color{daunavy}}l >{\color{daumaroon}}l X}
+\toprule
+\textbf{Thành phần} & \textbf{Phiên bản kiểm chứng} & \textbf{Vai trò} \\
+\midrule
+Flutter & 3.47.2 & Ứng dụng mobile đa nền tảng \\
+Dart & 3.13.x & Ngôn ngữ của Flutter \\
+Python & 3.13.7 & Backend, audit và suy luận AI \\
+FastAPI & 0.141.1 & REST API, validation và OpenAPI \\
+PyTorch & 2.14.0+cpu & Tensor và suy luận model \cite{paszke2019pytorch} \\
+Transformers & 5.17.0 & Processor và ViT \cite{huggingfaceTransformers} \\
+SQLAlchemy & 2.1.3 & ORM và transaction \\
+SQLite & 3.x & Database cục bộ \\
+Android Studio & Bản cài hiện tại & Emulator, build và chạy Flutter \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Phiên bản trong Bảng~\ref{tab:congcu} mô tả môi trường đã kiểm chứng của đồ
+án; giới hạn dependency chính xác vẫn được quản lý trong
+\code{requirements.txt} và \code{pubspec.yaml}.
+
+\section{Dữ liệu và các công trình liên quan}
+
+Food-101 đặt nền móng cho đánh giá nhận diện món ăn quy mô lớn với 101.000
+ảnh thuộc 101 lớp \cite{bossard2014food101}. 30VNFoods tập trung vào 30 món
+Việt và công bố 25.136 ảnh \cite{do2021_30vnfoods}. Model sử dụng trong đồ
+án kế thừa ViT-L/16 và được tác giả model fine-tune trên 30VNFoods kết hợp dữ
+liệu tự thu thập \cite{vietTungModel}. Khác với công trình chỉ tập trung phân
+loại, Vị Việt tích hợp model vào luồng ứng dụng có xác thực, lịch sử, phản
+hồi và kho công thức có metadata nguồn.
+
+Với dữ liệu công thức, tám món được dịch và chuẩn hóa từ Wikibooks theo điều
+kiện CC BY-SA 4.0 \cite{wikibooksCopyright}. Ảnh giao diện được chọn theo
+metadata riêng của từng tệp trên Wikimedia Commons/Openverse; việc sử dụng
+ảnh tuân theo yêu cầu attribution và giấy phép của tệp \cite{commonsReuse}.

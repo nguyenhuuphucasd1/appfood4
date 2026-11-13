@@ -1,0 +1,126 @@
+\chapter{Phụ lục}
+\markboth{Phụ lục}{}
+
+\section*{A. Hướng dẫn cài đặt và chạy chương trình}
+\phantomsection
+\addcontentsline{toc}{section}{A. Hướng dẫn cài đặt và chạy chương trình}
+
+Từ thư mục gốc dự án trên Windows, thiết lập backend bằng các lệnh sau:
+
+\begin{lstlisting}[language=bash, caption={Thiết lập và chạy backend.}]
+setup_backend.bat
+run_backend.bat
+\end{lstlisting}
+
+Script tạo môi trường Python, cài dependency và tải model khi chưa có. Sau
+khi API báo \code{/health} thành công, mở thư mục gốc bằng Android Studio,
+chọn cấu hình Flutter trỏ tới \code{mobile/lib/main.dart}, mở Android Emulator
+và nhấn \code{Shift+F10}. Backend không được tự khởi động từ Gradle.
+
+Kiểm thử thủ công API:
+\begin{lstlisting}[language=bash, caption={Kiểm tra health và nhận diện.}]
+curl http://127.0.0.1:8000/health
+curl -F "image=@food.jpg" http://127.0.0.1:8000/predict
+\end{lstlisting}
+
+\section*{B. Danh sách API}
+\phantomsection
+\addcontentsline{toc}{section}{B. Danh sách API}
+
+\begin{longtable}{p{3.0cm}p{5.2cm}p{5.9cm}}
+\caption{Các endpoint chính của backend.}\label{tab:api-list}\\
+\toprule Method & Endpoint & Mục đích \\
+\midrule \endfirsthead
+\toprule Method & Endpoint & Mục đích \\
+\midrule \endhead
+GET & /health & Kiểm tra API sẵn sàng \\
+POST & /auth/register & Tạo tài khoản \\
+POST & /auth/login & Đăng nhập \\
+POST & /auth/refresh & Xoay vòng token \\
+POST & /auth/logout & Thu hồi refresh session \\
+GET/PATCH & /users/me & Đọc hoặc đổi họ tên \\
+GET & /dishes & Tìm kiếm, lọc và phân trang món \\
+GET & /dishes/\{slug\} & Chi tiết món và công thức \\
+GET/POST & /favorites & Đọc hoặc thêm yêu thích \\
+DELETE & /favorites/\{slug\} & Bỏ yêu thích \\
+GET/DELETE & /history & Đọc hoặc xóa lịch sử \\
+DELETE & /history/\{id\} & Xóa một lịch sử \\
+POST & /predictions/\{id\}/feedback & Gửi nhãn đúng \\
+POST & /predict & Nhận diện ảnh món ăn \\
+\bottomrule
+\end{longtable}
+
+\section*{C. Danh sách 38 món}
+\phantomsection
+\addcontentsline{toc}{section}{C. Danh sách 38 món}
+
+\begin{enumerate}
+\item Bánh cuốn \item Mì Quảng \item Bánh tráng nướng \item Gỏi cuốn
+\item Bánh giò \item Bún mắm \item Canh chua \item Nem chua
+\item Bún riêu \item Bánh đúc \item Bánh pía \item Bánh canh
+\item Bánh khọt \item Bánh bột lọc \item Bánh căn \item Bún thịt nướng
+\item Bánh chưng \item Bún đậu mắm tôm \item Bánh bèo \item Bánh tét
+\item Cao lầu \item Cháo lòng \item Cá kho tộ \item Bún bò Huế
+\item Phở \item Xôi xéo \item Bánh mì \item Bánh xèo
+\item Cơm tấm \item Hủ tiếu \item Bánh cu đơ \item Nem nướng
+\item Bánh mì cay \item Cơm cháy \item Bò bía \item Bánh đậu xanh
+\item Bánh đa cua \item Bún cá
+\end{enumerate}
+
+\section*{D. Độ đo chi tiết theo lớp}
+\phantomsection
+\addcontentsline{toc}{section}{D. Độ đo chi tiết theo lớp}
+
+\IfFileExists{evaluation/per-class-table.tex}{\input{evaluation/per-class-table}}{
+Kết quả sẽ được sinh sau khi đánh giá đủ 5.014 ảnh.}
+
+\section*{E. Dữ liệu, giấy phép và quyền riêng tư}
+\phantomsection
+\addcontentsline{toc}{section}{E. Dữ liệu, giấy phép và quyền riêng tư}
+
+Model được công bố theo Apache-2.0. Dataset 30VNFoods được dùng để audit và
+đánh giá, không dùng làm ảnh UI. Tám công thức chuyển thể từ Wikibooks phải
+giữ attribution, URL phiên bản, thông báo chỉnh sửa và CC BY-SA 4.0. Ba mươi
+công thức còn lại được viết mới và dẫn tối thiểu hai nguồn. Mỗi ảnh giao diện
+có giấy phép riêng trong media manifest. Ảnh người dùng gửi nhận diện không
+được lưu; database chỉ ghi nhãn, độ tin cậy, Top~3 và thời điểm khi người dùng
+đã đăng nhập.
+
+\section*{F. Tuyên bố sử dụng công cụ AI hỗ trợ}
+\phantomsection
+\addcontentsline{toc}{section}{F. Tuyên bố sử dụng công cụ AI hỗ trợ}
+
+Công cụ AI được dùng để hỗ trợ kiểm tra cấu trúc dự án, gợi ý nội dung tài
+liệu, phát hiện lỗi và tạo bản nháp sơ đồ. Người thực hiện chịu trách nhiệm
+đối chiếu với mã nguồn, chạy test, kiểm tra số liệu, rà tài liệu tham khảo và
+chỉnh sửa bản cuối. Không dùng AI để tạo công thức giả, kết quả đánh giá giả
+hoặc thông tin cá nhân.
+
+\section*{G. Bảng tự kiểm trước khi nộp}
+\phantomsection
+\addcontentsline{toc}{section}{G. Bảng tự kiểm trước khi nộp}
+
+\begin{tukiem}
+  \item Đã thay toàn bộ placeholder trên trang bìa.
+  \item Backend và ứng dụng chạy được trên môi trường bảo vệ.
+  \item Mọi con số trong báo cáo có tệp kết quả hoặc truy vấn kiểm chứng.
+  \item Sơ đồ ERD khớp migration và model database hiện tại.
+  \item Mọi hình, bảng và thuật toán có chú thích, nhãn và được dẫn trong bài.
+  \item Tất cả tài liệu trong \code{refs.bib} đều được trích dẫn.
+  \item Không còn nội dung hướng dẫn của template hoặc tham chiếu lỗi.
+  \item Đã kiểm tra PDF render, tiếng Việt, mục lục và số trang.
+  \item Đã khai báo việc dùng công cụ AI hỗ trợ.
+\end{tukiem}
+
+\section*{H. Nhận xét của giảng viên hướng dẫn}
+\phantomsection
+\addcontentsline{toc}{section}{H. Nhận xét của giảng viên hướng dẫn}
+
+\khungnhanxet[7.5cm]
+\vspace{0.8em}
+\noindent\begin{minipage}[t]{0.5\textwidth}
+{\color{daumaroon}\bfseries Điểm số}\\[0.7em]
+\dongchamnhan{Bằng số:}\\[0.9em]
+\dongchamnhan{Bằng chữ:}
+\end{minipage}\hfill
+\okyten{\dauGVHD}{Giảng viên hướng dẫn}

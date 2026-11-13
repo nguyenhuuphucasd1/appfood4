@@ -1,0 +1,31 @@
+\begin{tikzpicture}[node distance=7.5mm and 21mm]
+  \node[startstop] (start) {Bắt đầu};
+  \node[process, below=of start] (pick) {Chụp hoặc chọn ảnh};
+  \node[decision, below=of pick] (valid) {Ảnh hợp lệ?};
+  \node[process, right=of valid, minimum width=3.4cm] (error) {Thông báo lỗi\\và chọn lại};
+  \node[process, below=of valid] (upload) {Gửi multipart /predict};
+  \node[process, below=of upload] (infer) {ViT suy luận và lấy Top 3};
+  \node[decision, below=of infer] (mapped) {Ánh xạ được món?};
+  \node[process, right=of mapped, minimum width=3.4cm] (maperror) {Báo lỗi ánh xạ};
+  \node[process, below=of mapped] (result) {Hiển thị Top 1\\và độ tin cậy};
+  \node[decision, below=of result] (open) {Mở công thức?};
+  \node[process, right=of open, minimum width=3.4cm] (retry) {Chụp ảnh khác};
+  \node[process, below=of open] (recipe) {Mở đúng RecipeDetail};
+  \node[startstop, below=of recipe] (end) {Kết thúc};
+
+  \draw[flowarr] (start) -- (pick);
+  \draw[flowarr] (pick) -- (valid);
+  \draw[flowarr] (valid) -- node[above, font=\scriptsize]{Không} (error);
+  \draw[flowarr] (error.north) |- (pick.east);
+  \draw[flowarr] (valid) -- node[right, font=\scriptsize]{có} (upload);
+  \draw[flowarr] (upload) -- (infer);
+  \draw[flowarr] (infer) -- (mapped);
+  \draw[flowarr] (mapped) -- node[above, font=\scriptsize]{Không} (maperror);
+  \draw[flowarr] (maperror.east) -- ++(8mm,0) |- (end.east);
+  \draw[flowarr] (mapped) -- node[right, font=\scriptsize]{có} (result);
+  \draw[flowarr] (result) -- (open);
+  \draw[flowarr] (open) -- node[above, font=\scriptsize]{Không} (retry);
+  \draw[flowarr] (retry.east) -- ++(14mm,0) |- (pick.east);
+  \draw[flowarr] (open) -- node[right, font=\scriptsize]{có} (recipe);
+  \draw[flowarr] (recipe) -- (end);
+\end{tikzpicture}

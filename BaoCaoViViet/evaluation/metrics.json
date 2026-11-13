@@ -1,0 +1,185 @@
+{
+  "sample_count": 5014,
+  "class_count": 30,
+  "correct": 4690,
+  "accuracy": 0.9353809333865177,
+  "macro_precision": 0.9399854470937334,
+  "macro_recall": 0.9340681122712808,
+  "macro_f1": 0.9367769282613423,
+  "mean_confidence": 0.9330277897846031,
+  "mean_inference_ms": 1410.020002792182,
+  "median_inference_ms": 1298.126,
+  "p95_inference_ms": 1406.821,
+  "true_labels": [
+    "Bánh bèo",
+    "Bánh bột lọc",
+    "Bánh căn",
+    "Bánh canh",
+    "Bánh chưng",
+    "Bánh cuốn",
+    "Bánh đúc",
+    "Bánh giò",
+    "Bánh khọt",
+    "Bánh mì",
+    "Bánh pía",
+    "Bánh tét",
+    "Bánh tráng nướng",
+    "Bánh xèo",
+    "Bún bò Huế",
+    "Bún đậu mắm tôm",
+    "Bún mắm",
+    "Bún riêu",
+    "Bún thịt nướng",
+    "Cá kho tộ",
+    "Canh chua",
+    "Cao lầu",
+    "Cháo lòng",
+    "Cơm tấm",
+    "Gỏi cuốn",
+    "Hủ tiếu",
+    "Mì Quảng",
+    "Nem chua",
+    "Phở",
+    "Xôi xéo"
+  ],
+  "predicted_labels": [
+    "Bánh bèo",
+    "Bánh bột lọc",
+    "Bánh căn",
+    "Bánh canh",
+    "Bánh chưng",
+    "Bánh cuốn",
+    "Bánh đúc",
+    "Bánh giò",
+    "Bánh khọt",
+    "Bánh mì",
+    "Bánh pía",
+    "Bánh tét",
+    "Bánh tráng nướng",
+    "Bánh xèo",
+    "Bún bò Huế",
+    "Bún đậu mắm tôm",
+    "Bún mắm",
+    "Bún riêu",
+    "Bún thịt nướng",
+    "bánh cu đơ",
+    "bánh đa cua",
+    "bánh đậu xanh",
+    "bò bía",
+    "bún cá",
+    "Cá kho tộ",
+    "Canh chua",
+    "Cao lầu",
+    "Cháo lòng",
+    "Cơm tấm",
+    "Gỏi cuốn",
+    "Hủ tiếu",
+    "Mì Quảng",
+    "Nem chua",
+    "nem nướng",
+    "Phở",
+    "Xôi xéo"
+  ],
+  "top_confusions": [
+    {
+      "ground_truth": "Phở",
+      "prediction": "Bún bò Huế",
+      "count": 12
+    },
+    {
+      "ground_truth": "Bánh chưng",
+      "prediction": "Bánh tét",
+      "count": 10
+    },
+    {
+      "ground_truth": "Bánh canh",
+      "prediction": "Hủ tiếu",
+      "count": 9
+    },
+    {
+      "ground_truth": "Bún bò Huế",
+      "prediction": "Phở",
+      "count": 9
+    },
+    {
+      "ground_truth": "Bánh bột lọc",
+      "prediction": "Bánh bèo",
+      "count": 8
+    },
+    {
+      "ground_truth": "Hủ tiếu",
+      "prediction": "Phở",
+      "count": 7
+    },
+    {
+      "ground_truth": "Hủ tiếu",
+      "prediction": "Bánh canh",
+      "count": 7
+    },
+    {
+      "ground_truth": "Bánh canh",
+      "prediction": "Phở",
+      "count": 6
+    },
+    {
+      "ground_truth": "Bánh cuốn",
+      "prediction": "Bánh đúc",
+      "count": 6
+    },
+    {
+      "ground_truth": "Bánh khọt",
+      "prediction": "Bánh căn",
+      "count": 6
+    },
+    {
+      "ground_truth": "Bún mắm",
+      "prediction": "Bún bò Huế",
+      "count": 6
+    },
+    {
+      "ground_truth": "Bún riêu",
+      "prediction": "Bún bò Huế",
+      "count": 6
+    },
+    {
+      "ground_truth": "Phở",
+      "prediction": "Hủ tiếu",
+      "count": 6
+    },
+    {
+      "ground_truth": "Bánh canh",
+      "prediction": "Bún bò Huế",
+      "count": 5
+    },
+    {
+      "ground_truth": "Bánh tét",
+      "prediction": "Bánh chưng",
+      "count": 5
+    },
+    {
+      "ground_truth": "Bún bò Huế",
+      "prediction": "Bánh canh",
+      "count": 5
+    },
+    {
+      "ground_truth": "Hủ tiếu",
+      "prediction": "Bún bò Huế",
+      "count": 5
+    },
+    {
+      "ground_truth": "Bánh khọt",
+      "prediction": "Bánh xèo",
+      "count": 4
+    },
+    {
+      "ground_truth": "Bánh xèo",
+      "prediction": "Bánh tráng nướng",
+      "count": 4
+    },
+    {
+      "ground_truth": "Canh chua",
+      "prediction": "Bún riêu",
+      "count": 4
+    }
+  ]
+}

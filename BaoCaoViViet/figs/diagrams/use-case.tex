@@ -1,0 +1,40 @@
+\begin{tikzpicture}[x=1cm,y=1cm,
+  actor/.style={rectangle, rounded corners=3pt, draw=daunavy,
+    line width=.9pt, fill=lightnavy, minimum width=2.7cm,
+    minimum height=10mm, align=center, font=\footnotesize, soft},
+  usecase/.style={ellipse, draw=daumaroon, line width=.8pt, fill=white,
+    minimum width=4.0cm, minimum height=10mm, align=center,
+    font=\footnotesize}]
+  \node[actor] (guest) at (-4.4,1.8) {Khách};
+  \node[actor] (member) at (-4.4,-2.0) {Người dùng\\đăng nhập};
+
+  \node[usecase] (browse) at (0,2.7) {Xem/tìm kiếm công thức};
+  \node[usecase] (detail) at (0,1.2) {Xem chi tiết và nguồn};
+  \node[usecase] (predict) at (0,-0.3) {Nhận diện món từ ảnh};
+  \node[usecase] (auth) at (0,-1.8) {Đăng ký/đăng nhập};
+
+  \node[usecase] (favorite) at (5.2,2.7) {Quản lý yêu thích};
+  \node[usecase] (history) at (5.2,1.2) {Xem/xóa lịch sử};
+  \node[usecase] (feedback) at (5.2,-0.3) {Gửi phản hồi nhãn đúng};
+  \node[usecase] (profile) at (5.2,-1.8) {Sửa tên/đăng xuất};
+
+  \node[draw=gray300, rounded corners=5pt, inner sep=8mm,
+        fit=(browse)(profile), label={[font=\small\bfseries,
+        text=daunavy]above:Hệ thống Vị Việt}] (system) {};
+
+  \coordinate (guestbus) at (-2.55,1.8);
+  \coordinate (memberbus) at (2.6,-3.0);
+  \draw[assoc] (guest.east) -- (guestbus);
+  \draw[assoc] (guestbus) |- (browse.west);
+  \draw[assoc] (guestbus) |- (detail.west);
+  \draw[assoc] (guestbus) |- (predict.west);
+  \draw[assoc] (guestbus) |- (auth.west);
+
+  \draw[assoc, -{Triangle[open,length=2.7mm,width=2.2mm]}]
+    (member.north) -- (guest.south);
+  \draw[assoc] (member.east) -- ++(1.1,0) |- (memberbus);
+  \draw[assoc] (memberbus) |- (favorite.south);
+  \draw[assoc] (memberbus) |- (history.south);
+  \draw[assoc] (memberbus) |- (feedback.south);
+  \draw[assoc] (memberbus) |- (profile.south);
+\end{tikzpicture}

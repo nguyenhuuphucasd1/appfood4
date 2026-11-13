@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering
+\caption{Kết quả kiểm thử và build tại lần nghiệm thu báo cáo.}
+\label{tab:test-status}
+\begin{tabularx}{\textwidth}{>{\bfseries}p{4.1cm} p{2.3cm} X}
+\toprule
+Hạng mục & Trạng thái & Kết quả \\
+\midrule
+Backend pytest & PASS & 24 test, 48 subtest; 2 cảnh báo deprecation; 12,24 giây \\
+Flutter analyze & PASS & Không phát hiện issue; 53,4 giây \\
+Flutter test & PASS & 21/21 test; khoảng 5 giây \\
+Audit công thức & PASS & 38 món, 38 ảnh, metadata đầy đủ, không có lỗi \\
+Build APK debug & PASS & Sinh \code{mobile/build/}\\\code{app/outputs/}\\\code{flutter-apk/}\\\code{app-debug.apk} \\
+Android Emulator & CHƯA THỬ LẠI & Có ảnh nghiệm thu luồng camera, Top~1 và mở công thức; chưa chạy lại thao tác tương tác trong phiên tạo báo cáo \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Backend test phát sinh hai cảnh báo không làm test thất bại: TestClient của
+Starlette sẽ chuyển sang \code{httpx2}, và cấu hình Alembic chưa khai báo
+\code{path\_separator}. APK build có cảnh báo phiên bản SDK XML giữa Android
+Studio và command-line tools nhưng Gradle vẫn kết thúc với mã thoát 0.

@@ -1,0 +1,26 @@
+\begin{abstract}
+
+Ẩm thực Việt Nam đa dạng theo vùng miền, trong khi người dùng đôi khi chỉ có
+ảnh món ăn mà không biết tên để tìm công thức phù hợp. Đồ án xây dựng hệ
+thống Vị Việt nhằm kết hợp khám phá công thức có nguồn với nhận diện món ăn
+từ ảnh trên thiết bị di động. Ứng dụng Flutter giao tiếp với backend FastAPI
+qua HTTP; dữ liệu nghiệp vụ được lưu bằng SQLite và SQLAlchemy. Ảnh JPEG hoặc
+PNG được xử lý bởi mô hình Vision Transformer ViT-L/16 tiền huấn luyện, sau
+đó nhãn dự đoán được chuẩn hóa và ánh xạ tới bản ghi món ăn trong cơ sở dữ
+liệu. Hệ thống hiện quản lý 38 món đã xuất bản, 38 ảnh có metadata giấy phép,
+348 nguyên liệu, 205 bước nấu và 85 nguồn tham khảo. Tám công thức được dịch
+và chuẩn hóa từ nguồn mở; ba mươi công thức còn lại do Vị Việt biên soạn và
+đối chiếu tối thiểu hai nguồn. Bộ dữ liệu 30VNFoods gồm 25.136 ảnh thuộc 30
+lớp được audit và tạo manifest sạch còn 25.032 ảnh; tập kiểm thử sạch gồm
+5.014 ảnh được dùng để đánh giá độc lập 30 lớp giao nhau với model. Ngoài
+nhận diện, ứng dụng hỗ trợ tìm kiếm, lọc, yêu thích, lịch sử, phản hồi kết
+quả và hiển thị nguồn--bản quyền. Hệ thống chứng minh khả năng kết hợp mô
+hình thị giác tiền huấn luyện với một kho công thức có thể truy nguyên trong
+một ứng dụng mobile hoàn chỉnh, đồng thời chỉ rõ giới hạn khi tập đánh giá
+chưa bao phủ đủ 38 nhãn của model.
+
+\vspace{0.8em}
+\noindent\textbf{Từ khoá:} nhận diện món ăn, Vision Transformer, Flutter,
+FastAPI, công thức món Việt, 30VNFoods.
+
+\end{abstract}

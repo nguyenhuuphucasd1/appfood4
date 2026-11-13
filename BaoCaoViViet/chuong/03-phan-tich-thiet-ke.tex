@@ -1,0 +1,199 @@
+\chapter{Phân tích và thiết kế}
+\label{ch:thietke}
+
+\begin{muctieu}
+Chương này phân tích yêu cầu của Vị Việt, mô tả kiến trúc, dữ liệu, luồng
+nhận diện và cấu hình model được tích hợp trong sản phẩm.
+\end{muctieu}
+
+\section{Phân tích bài toán}
+
+Hệ thống cần giải quyết hai đường vào cùng hội tụ về một kho công thức. Với
+tìm kiếm văn bản, người dùng nhập tên hoặc từ khóa; backend chuẩn hóa chuỗi
+và trả danh sách món phù hợp. Với nhận diện ảnh, client gửi JPEG/PNG; model
+sinh nhãn, backend chuẩn hóa nhãn đó rồi tìm bản ghi \code{dishes}. Đầu ra
+cuối cùng là món chuẩn, ảnh minh họa, thời gian, khẩu phần, nguyên liệu, các
+bước thực hiện và metadata nguồn.
+
+Hai nhóm tác nhân được trình bày ở Hình~\ref{fig:usecase}. Khách sử dụng các
+chức năng không cá nhân hóa. Người dùng đăng nhập có thêm yêu thích, lịch sử,
+phản hồi và hồ sơ. Không có trang quản trị trong phạm vi đồ án; dữ liệu công
+thức được cập nhật bằng catalog JSON và importer có kiểm tra.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.94\textwidth}{!}{\input{figs/diagrams/use-case}}
+\caption{Sơ đồ Use Case tổng thể của Vị Việt.}
+\label{fig:usecase}
+\end{figure}
+
+\section{Yêu cầu chức năng}
+
+\begin{table}[htbp]
+\centering
+\caption{Các yêu cầu chức năng chính.}
+\label{tab:functional-requirements}
+\small
+\begin{tabularx}{\textwidth}{>{\bfseries\color{daumaroon}}l X >{\centering\arraybackslash}p{2.2cm}}
+\toprule
+Mã & Mô tả & Tác nhân \\
+\midrule
+FR01 & Đăng ký, đăng nhập, refresh token và đăng xuất. & Người dùng \\
+FR02 & Xem, tìm kiếm và lọc danh mục món. & Tất cả \\
+FR03 & Xem chi tiết công thức, nguồn và giấy phép. & Tất cả \\
+FR04 & Chụp/chọn ảnh, gửi nhận diện và xem Top~1. & Tất cả \\
+FR05 & Mở trực tiếp công thức của món đã nhận diện. & Tất cả \\
+FR06 & Thêm hoặc bỏ món yêu thích. & Đăng nhập \\
+FR07 & Xem, xóa lịch sử và gửi phản hồi nhãn đúng. & Đăng nhập \\
+FR08 & Đọc hồ sơ và thay đổi họ tên. & Đăng nhập \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Yêu cầu phi chức năng}
+
+\begin{itemize}
+  \item \textbf{Đúng dữ liệu:} không xuất bản công thức khi thiếu nguồn,
+        nguyên liệu, bước nấu hoặc metadata ảnh.
+  \item \textbf{Bảo mật:} mật khẩu băm Argon2; JWT có hạn dùng; refresh token
+        xoay vòng và có thể thu hồi; secret production phải đủ mạnh.
+  \item \textbf{Quyền riêng tư:} ảnh nhận diện không được lưu; lịch sử chỉ
+        lưu nhãn, confidence, Top~3 và thời điểm.
+  \item \textbf{Khả dụng:} giao diện tiếng Việt, vùng chạm đủ lớn, có trạng
+        thái loading, lỗi, rỗng và fallback ảnh.
+  \item \textbf{Tương thích:} Android Emulator dùng \code{10.0.2.2}; URL
+        thiết bị thật cấu hình bằng \code{API\_BASE\_URL}.
+  \item \textbf{Bảo trì:} database có migration; importer idempotent theo
+        slug; model và dataset tách khỏi Git.
+\end{itemize}
+
+\section{Luồng nhận diện món ăn}
+
+Hình~\ref{fig:activity} mô tả toàn bộ luồng từ lúc chọn ảnh đến khi mở công
+thức. Ảnh sai định dạng hoặc không giải mã được bị chặn trước khi suy luận.
+Nếu nhãn model không ánh xạ được tới database, client không tự chọn một món
+khác. Đây là nguyên tắc quan trọng để tránh hiển thị công thức sai.
+
+\begin{figure}[p]
+\centering
+\resizebox{!}{0.72\textheight}{\input{figs/diagrams/activity-recognition}}
+\caption{Activity Diagram của luồng nhận diện và mở công thức.}
+\label{fig:activity}
+\end{figure}
+\clearpage
+
+\section{Thiết kế kiến trúc hệ thống}
+
+Kiến trúc ở Hình~\ref{fig:architecture} gồm ba vùng. Ứng dụng Flutter đảm
+nhiệm giao diện, trạng thái phiên và gọi dịch vụ. FastAPI kiểm tra request,
+xác thực, thực thi nghiệp vụ và chuẩn hóa response. Tầng tài nguyên gồm
+SQLite, model ViT local, catalog công thức và 38 ảnh WebP.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.96\textwidth}{!}{\input{figs/diagrams/system-architecture}}
+\caption{Kiến trúc tổng thể Flutter--FastAPI--SQLite--ViT.}
+\label{fig:architecture}
+\end{figure}
+
+Model được nạp theo singleton và giữ trong bộ nhớ. Suy luận CPU được khóa ở
+đoạn processor/model để tránh nhiều request đồng thời làm cạn RAM, trong khi
+FastAPI đưa công việc sang worker thread để không chặn event loop. Media được
+phục vụ qua \code{/media}; database chỉ lưu đường dẫn tương đối.
+
+\clearpage
+\section{Thiết kế API và trình tự xử lý}
+
+Các router được chia theo auth, user, dish và activity. Biên API dùng JSON
+camelCase; nội bộ Python và database dùng snake\_case. Request nhận diện là
+multipart field \code{image}, chấp nhận JPEG/PNG tối đa 10~MB. Trình tự chi
+tiết được minh họa ở Hình~\ref{fig:sequence}.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.96\textwidth}{!}{\input{figs/diagrams/recognition-sequence}}
+\caption{Sequence Diagram cho endpoint \code{POST /predict}.}
+\label{fig:sequence}
+\end{figure}
+
+Response vẫn chứa Top~3 cho lịch sử và khả năng đánh giá, nhưng màn hình
+chính chỉ hiển thị Top~1. Khi request có access token hợp lệ, backend tạo
+\code{prediction\_history}; khi là khách, \code{predictionId} bằng null.
+
+\clearpage
+\section{Thiết kế cơ sở dữ liệu}
+
+Database có chín bảng như Hình~\ref{fig:erd}. Bảng \code{dishes} là thực thể
+trung tâm của kho công thức. Ba bảng con lưu nguyên liệu, bước nấu và nguồn
+tham khảo theo thứ tự. \code{favorites} là bảng nối giữa user và dish. Lịch
+sử và phản hồi lưu chuỗi nhãn thay vì khóa ngoại dish, bởi phản hồi có thể
+đề cập nhãn model chưa ánh xạ được; vì vậy ERD không tạo quan hệ FK giả giữa
+prediction và dishes.
+
+\clearpage
+\thispagestyle{dau}
+\vspace*{\fill}
+\begin{center}
+\resizebox{\textwidth}{!}{\input{figs/diagrams/database-erd}}
+\dauFigureCaption{ERD của chín bảng trong cơ sở dữ liệu Vị Việt.}{fig:erd}
+\end{center}
+\vspace*{\fill}
+\clearpage
+
+Foreign key dùng \code{ON DELETE CASCADE} ở các bản ghi phụ thuộc. Cặp
+\code{user\_id,dish\_id} trong favorites là duy nhất; \code{history\_id}
+trong feedback cũng duy nhất để mỗi lịch sử chỉ có tối đa một phản hồi.
+Migration được version hóa bằng Alembic và chạy trước khi API nhận request.
+
+\section{Thiết kế kho công thức và giấy phép}
+
+Catalog được chia thành tám công thức dịch từ nguồn mở và ba mươi công thức
+Vị Việt biên soạn. Nội dung dịch phải có URL phiên bản cố định, attribution,
+ghi chú đã thay đổi và giấy phép CC BY-SA. Nội dung biên soạn cần tối thiểu
+hai reference. Ảnh chỉ chấp nhận Public Domain, CC0, CC BY hoặc CC BY-SA và
+phải có tác giả, URL nguồn, tên/URL giấy phép cùng SHA-256 trong manifest.
+
+Importer chạy trong transaction, cập nhật theo slug và rollback toàn bộ nếu
+một món không hợp lệ. Trước import thật, SQLite được sao lưu. Serializer chỉ
+trả \code{hasRecipe=true} khi bản ghi thỏa toàn bộ điều kiện xuất bản.
+
+\clearpage
+\section{Thiết kế model nhận diện}
+
+Pipeline ở Hình~\ref{fig:vit-pipeline} bắt đầu bằng kiểm tra MIME, dung lượng
+và khả năng giải mã. Processor chính thức của model thực hiện resize/chuẩn
+hóa; ứng dụng không tự crop theo một quy tắc khác. Cấu hình local cho biết
+model có input 384$\times$384, patch 16, 24 encoder, hidden size 1024, 16
+attention head và 38 lớp đầu ra.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.96\textwidth}{!}{\input{figs/diagrams/vit-pipeline}}
+\caption{Pipeline suy luận của model ViT-L/16.}
+\label{fig:vit-pipeline}
+\end{figure}
+
+Sau Softmax, backend trả Top~3 và cờ \code{accepted} dựa trên ngưỡng 0,60.
+Tên nhãn được lấy trực tiếp từ \code{model.config.id2label}, chuẩn hóa dấu và
+alias rồi truy vấn \code{dishes.normalized\_name}. Cách này tránh phụ thuộc
+vào thứ tự lớp viết thủ công.
+
+\refstepcounter{algorithm}
+\label{alg:predict-recipe}
+\addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}Nhận diện ảnh và ánh xạ công thức}
+\begin{tcolorbox}[colback=gray100, colframe=daugold, boxrule=0.8pt,
+  title={\textbf{Giải thuật~\thealgorithm. Nhận diện ảnh và ánh xạ công thức}},
+  colbacktitle=daunavy, coltitle=white]
+\small
+\begin{tabularx}{\linewidth}{>{\bfseries\color{daumaroon}}r X}
+Đầu vào & Ảnh $I$, model $M$, ngưỡng $\tau$, cơ sở dữ liệu $D$. \\
+Đầu ra & Dự đoán Top~1, Top~3 và món được ánh xạ hoặc null. \\
+1 & Nếu $I$ không phải JPEG/PNG hoặc vượt giới hạn thì trả lỗi đầu vào. \\
+2 & $X \gets \operatorname{Processor}(\operatorname{RGB}(I))$. \\
+3 & $P \gets \operatorname{Softmax}(M(X))$. \\
+4 & $T \gets \operatorname{TopK}(P,3)$. \\
+5 & $n \gets \operatorname{Normalize}(T[1].label)$. \\
+6 & $d \gets \operatorname{FindDish}(D,n)$. \\
+7 & Trả $T[1]$, $T$, $d$ và $(T[1].confidence \ge \tau)$. \\
+\end{tabularx}
+\end{tcolorbox}
