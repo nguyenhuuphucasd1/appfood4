@@ -151,24 +151,24 @@ phiên bản được quản lý bởi `backend/requirements.txt` và `mobile/pu
 
 ```mermaid
 flowchart TB
-    U[Người dùng] --> F[Flutter App]
-    F --> S[AppState]
-    S --> C[ApiClient / AiService]
-    C -->|JSON + multipart| A[FastAPI]
+    U["Người dùng"] --> F["Flutter App"]
+    F --> S["AppState"]
+    S --> C["ApiClient / AiService"]
+    C -->|"JSON + multipart"| A["FastAPI"]
 
-    A --> AU[Auth / User]
-    A --> DI[Dish / Favorite]
-    A --> HI[History / Feedback]
-    A --> PR[Predict]
-    A --> ME[/media/dishes]
+    A --> AU["Auth / User"]
+    A --> DI["Dish / Favorite"]
+    A --> HI["History / Feedback"]
+    A --> PR["Predict"]
+    A --> ME["/media/dishes"]
 
     AU --> DB[(SQLite)]
     DI --> DB
     HI --> DB
-    PR --> V[ViT-L/16 - 38 nhãn]
-    V --> MAP[Chuẩn hóa và ánh xạ món]
+    PR --> V["ViT-L/16 — 38 nhãn"]
+    V --> MAP["Chuẩn hóa và ánh xạ món"]
     MAP --> DB
-    DB --> R[Công thức + nguồn + giấy phép]
+    DB --> R["Công thức + nguồn + giấy phép"]
     R --> A
 ```
 
